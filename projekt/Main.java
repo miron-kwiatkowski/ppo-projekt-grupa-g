@@ -1,7 +1,8 @@
 public class Main {
-    //przywitanie, zrób żula
-    //wybieranie opcji
-    //wyświetl opocje
+    public static void main(String[] args) {
+            //przywitanie, zrób żula
+            //wybieranie opcji
+            //wyświetl opocje
     /*private static void executeCommand(Collection collection, String command, String parameter) throws InvalidCommandException {
         try {
             switch (command) {
@@ -26,10 +27,11 @@ public class Main {
          } catch (InputException e) {
         new Handler().handle(e);}
         }*/
-    //sprawdzaj żywotność gracza i przeciwnika
-    //jeśli martwy gracz koniec gry.exe
-    //jeśli przeciwnik martwy dodaj itemki i pogratuluj.exe
-    //generuj następnego przeciwnika i powtórz akcje
-    //walka z bossem po np. 3 przeciwnikach
-    //koniec gry
+            //sprawdzaj żywotność gracza i przeciwnika
+            //jeśli martwy gracz koniec gry.exe
+            //jeśli przeciwnik martwy dodaj itemki i pogratuluj.exe
+            //generuj następnego przeciwnika i powtórz akcje
+            //walka z bossem po np. 3 przeciwnikach
+            //koniec gry
+    }
 }
