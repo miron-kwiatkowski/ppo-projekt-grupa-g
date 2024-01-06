@@ -1,73 +1,80 @@
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.function.Predicate;
-import java.util.Random;
-import java.util.List;
-
 public class Activities {
-    }
 
-    public Activities attack() {
+    public void attack() {
+        System.out.println("Atak");
         //atak zwykły postaci;
     }
-    public Activities SpecialAttack {
-            //sprawdż klase, użyj atak specjalny (np attack + dodatkowe staty);
+
+    public void specialAttack() {
+        System.out.println("Specjalny Atak");
+        //sprawdż klase, użyj atak specjalny (np attack + dodatkowe staty);
+
     }
 
-    public Activities  ItemsUse(String x) { //atakujące
-        Comparator<Animal> comparator;
-
+    public Activities itemsUse(String x) { //atakujące
         switch (x) {
-            case "nazwa itemu":
+            case "klejpała":
                 //sprawdż czy posiada, jeśli tak użyj;
+                System.out.println("Gracz używa klejpały!");
+                //info o obrażeniach
                 break;
-            case "-name":
-                comparator = Comparator.comparing(Animal::getName).reversed();
+            case "tulipan":
+                //sprawdż czy posiada, jeśli tak użyj;
+                System.out.println("Gracz używa tulipana");
+                //info o obrażeniach
                 break;
-            case "age":
-                comparator = Comparator.comparingInt(Animal::getAge);
-                break;
-            case "-age":
-                comparator = Comparator.comparingInt(Animal::getAge).reversed();
-                break;
-            case "id":
-                comparator = Comparator.comparingInt(Animal::getId);
-                break;
-            case "-id":
-                comparator = Comparator.comparingInt(Animal::getId).reversed();
+            case "bombelek":
+                //sprawdż czy posiada, jeśli tak użyj;
+                System.out.println("Gracz używa bombelka");
+                //info o obrażeniach
                 break;
             default:
-                //throw new InvalidCommandException() nie ma przedmiotu błąd;
+                System.out.println("Nie dla psa!");
+                //nie ma przedmiotu błąd;
         }
         return this;
     }
-    public Activities  ItemsBusts(String x) { // dodające hp i mane
-        Comparator<Animal> comparator;
+
+    public Activities itemsBusts(String x) { // dodające hp i mane
 
         switch (x) {
-            case "nazwa itemu":
+            case "Batonik":
                 //sprawdż czy posiada, jeśli tak użyj;
+                System.out.println("Dobry mars byku");
+                //info o dodanych statach
                 break;
-            case "-name":
-                comparator = Comparator.comparing(Animal::getName).reversed();
-                break;
-            case "age":
-                comparator = Comparator.comparingInt(Animal::getAge);
-                break;
-            case "-age":
-                comparator = Comparator.comparingInt(Animal::getAge).reversed();
-                break;
-            case "id":
-                comparator = Comparator.comparingInt(Animal::getId);
-                break;
-            case "-id":
-                comparator = Comparator.comparingInt(Animal::getId).reversed();
+            case "Amarenka":
+                //sprawdż czy posiada, jeśli tak użyj;
+                System.out.println("MMM dobry rocznik");
+                //info o dodanych statach
                 break;
             default:
-                //throw new InvalidCommandException() nie ma przedmiotu błąd;
+                System.out.println("Nie dla psa!");
+                //nie ma przedmiotu błąd;
         }
-        return this;
+        return this;}
 
+        public Activities help(String x) {
+            switch (x) {
+                case "":
+                    System.out.println("Oto co możesz począć:" +
+                            "\n-zaatakować z kopa lub bara (a)" +
+                            "\n-uzyć ataku specjalnego (spa), ale czy masz na to siłę?" +
+                            "\n-użyj broni, nie bądż pizda! (ia)" +
+                            "\n-zregeneruj siły (b)");
+                    System.out.println("Chcesz dowiedzieć się więcej? Wpisz help ia/b (broń/przedmiot)");
+                    break;
+                case "b":
+                    System.out.println("Tu jest lista buffów do użytku xd");
+                    break;
+                case "ia":
+                    System.out.println("tu jest lista broni do użytku");
+                    break;
+                default:
+                    System.out.println("błąd xd");
+            }
+            return null;
+        }
     }
 
 
