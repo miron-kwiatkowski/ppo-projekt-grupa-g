@@ -24,7 +24,7 @@ public int getHealthPoints() {
         return manaPoints;
     }
         public int getItem() {
-        return manaPoints;
+        return item;
     }
 public void takeHit(int hitPoints) {
         this.healthPoints = this.healthPoints - hitPoints;
