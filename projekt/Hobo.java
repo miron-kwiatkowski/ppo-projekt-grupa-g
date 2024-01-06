@@ -1,6 +1,7 @@
 class Hobo {
     private String name;
     private String gender;
+     private String item;
     private int healthPoints;
     private int manaPoints;
 
@@ -9,17 +10,20 @@ class Hobo {
         this.name = name;
         this.healthPoints = 100;
         this.manaPoints = 100;
+        this.item = item;
         }
         
 
 public String getName() {
         return name;
         }
-
 public int getHealthPoints() {
         return healthPoints;
         }
     public int getManaPoints() {
+        return manaPoints;
+    }
+        public int getItem() {
         return manaPoints;
     }
 public void takeHit(Integer hitPoints) {
