@@ -2,7 +2,7 @@ public class Main {
     //przywitanie, zrób żula
     //wybieranie opcji
     //wyświetl opocje
-    private static void executeCommand(Collection collection, String command, String parameter) throws InvalidCommandException {
+    /*private static void executeCommand(Collection collection, String command, String parameter) throws InvalidCommandException {
         try {
             switch (command) {
                 case "a": //attack
@@ -25,7 +25,7 @@ public class Main {
             }
          } catch (InputException e) {
         new Handler().handle(e);}
-        }
+        }*/
     //sprawdzaj żywotność gracza i przeciwnika
     //jeśli martwy gracz koniec gry.exe
     //jeśli przeciwnik martwy dodaj itemki i pogratuluj.exe
