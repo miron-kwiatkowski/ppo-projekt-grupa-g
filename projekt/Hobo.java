@@ -26,7 +26,7 @@ public int getHealthPoints() {
         public int getItem() {
         return manaPoints;
     }
-public void takeHit(Integer hitPoints) {
+public void takeHit(int hitPoints) {
         this.healthPoints = this.healthPoints - hitPoints;
         }
 public boolean isDead() {
