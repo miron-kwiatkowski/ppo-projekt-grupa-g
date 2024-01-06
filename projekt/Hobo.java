@@ -1,18 +1,24 @@
 class Hobo {
     private String name;
     private String gender;
+    private String className;
+    private String title;
     private String item;
     private int healthPoints;
     private int manaPoints;
 
-    public Hobo(String name) {
+    public Hobo(String name,String gender) {
         this.gender = "gender";
         this.name = name;
+        this.className="Żul";
         this.healthPoints = 100;
         this.manaPoints = 100;
         this.item = "item";
     }
-
+    @Override
+    public String toString() {
+        return String.format(name+" "+className+" "+title+"/nStatystyki: HP-"+getHealthPoints()+" MP-"+getManaPoints());
+    }
 
     public String getName() {
         return name;
