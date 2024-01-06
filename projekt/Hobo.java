@@ -1,34 +1,34 @@
 class Hobo {
     private String name;
     private String gender;
-     private String item;
+    private String item;
     private int healthPoints;
     private int manaPoints;
 
     public Hobo(String name) {
-        this.gender = gender;
+        this.gender = "gender";
         this.name = name;
         this.healthPoints = 100;
         this.manaPoints = 100;
-        this.item = item;
-        }
-        
+        this.item = "item";
+    }
 
-public String getName() {
+
+    public String getName() {
         return name;
-        }
-public int getHealthPoints() {
+    }
+    public int getHealthPoints() {
         return healthPoints;
-        }
+    }
     public int getManaPoints() {
         return manaPoints;
     }
-        public int getItem() {
+    public String getItem() {
         return item;
     }
-public void takeHit(int hitPoints) {
+    public void takeHit(int hitPoints) {
         this.healthPoints = this.healthPoints - hitPoints;
-        }
-public boolean isDead() {
+    }
+    public boolean isDead() {
         return healthPoints <= 0;
-        }}
+    }}
