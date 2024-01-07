@@ -24,6 +24,18 @@ class Hobo {
         return random.nextInt(26) + 5; // Generates a random number between 5 and 30
     }
 
+    public void specialAttack(Hobo target) {
+        System.out.println(getName() + " używa specjalnego ataku!");
+        target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
+        this.manaPoints -= 10; // Odejmuje 10 punktów many po użyciu specjalnego ataku
+    }
+    public void applyHealing(int healingPoints) {
+        this.healthPoints = Math.min(100, this.healthPoints + healingPoints); // Nie przekracza maksymalnej ilości HP
+    }
+
+    public void applyManaRestoration(int restorationPoints) {
+        this.manaPoints = Math.min(100, this.manaPoints + restorationPoints); // Nie przekracza maksymalnej ilości MP
+    }
     @Override
     public String toString() {
         return String.format(name+" "+className+" "+title+"\nStatystyki: HP-"+getHealthPoints()+" MP-"+getManaPoints());
