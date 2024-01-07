@@ -23,7 +23,7 @@ public class Activities {
                     return true;
                 case "tulipan":
                     // Sprawdź czy posiada, jeśli tak użyj;
-                    System.out.println("Gracz używa tulipana");
+                    System.out.println("Gracz używa tulipana z rozbitej butelki po winie!");
                     // Info o obrażeniach
                     return true;
                 case "bombelek":
@@ -56,7 +56,7 @@ public class Activities {
                     return true;
                 case "Amarenka":
                     // Sprawdź czy posiada, jeśli tak użyj;
-                    System.out.println("MMM dobry rocznik");
+                    System.out.println("Mmm dobra mirabelkowa");
                     // Info o dodanych statach
                     return true;
                 default:
