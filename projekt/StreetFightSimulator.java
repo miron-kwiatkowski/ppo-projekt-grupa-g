@@ -4,7 +4,7 @@ public class StreetFightSimulator {
             public static void main(String[] args) {
                 Scanner input = new Scanner(System.in);
                 System.out.println("Witaj w symulatorze walk ulicznych! " +
-                        "\nCeka cię wielkie wyzwanie stoczenia boju z najwybitniejszymi jednostkami naszego miasta. \n" +
+                        "\nCzeka cię wielkie wyzwanie stoczenia boju z najwybitniejszymi jednostkami naszego miasta. \n" +
                         "Pora abyś powiedział nam kim jesteś.");
 
                 System.out.println("Podaj swoje imię przybyszu:");
