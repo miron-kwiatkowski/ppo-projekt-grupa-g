@@ -1,4 +1,4 @@
-Projekt PPO grupa G (jak gówno)
+Projekt PPO grupa G
 
 Ewa Kubera
 Miron Kwiatkowski
