@@ -1,8 +1,8 @@
-public class Patus extends Hobo {
+public class Lowlife extends Hobo {
     private int attackPoints;
     private String item;
 
-    public Patus(String name, String gender, String title) {
+    public Lowlife(String name, String gender, String title) {
         super(name, gender);
         this.title = title;
         this.className = "Patus";
