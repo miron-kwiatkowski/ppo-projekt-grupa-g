@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.until.Random;
 
 public class Fight {
     public static void fight(Hobo player, Hobo enemy) {
@@ -81,9 +82,30 @@ public class Fight {
         }
     }
 
-    private static void enemyTurn(Hobo player, Hobo enemy) {
-        // Enemy uses its attack
-        System.out.println(enemy.getName() + " atakuje ciebie!");
-        player.takeHit(enemy.getAttackPoints());
+private static void enemyTurn(Hobo player, Hobo enemy) {
+    int action = new Random().nextInt(4) + 1;
+
+    switch (action) {
+        case 1:
+            System.out.println(enemy.getName() + " atakuje ciebie!");
+            enemy.attack(player);
+            break;
+        case 2:
+            System.out.println(enemy.getName() + " używa specjalnego ataku!");
+            enemy.specialAttack(player);
+            break;
+        case 3:
+            System.out.println(enemy.getName() + " używa specjalnego przedmiotu!");
+             items.itemsUse(enemy.getItemName(), player);
+            break;
+        case 4:
+            System.out.println(enemy.getName() + " regeneruje siły!");
+            items.itemsBuffs(enemy.getBuffName(), enemy);
+            break;
+        default:
+            // Domyślnie nie powinno się znaleźć w tym miejscu, chyba że coś poszło nie tak
+            System.out.println("Coś poszło nie tak przy losowaniu akcji przeciwnika!");
+            break;
     }
+}
 }
