@@ -82,7 +82,7 @@ public class Items {
         buffActions.put("Wódeczka", player -> {
             System.out.println("Gracz pije napój bogów - wodę ognistą!");
             player.applyManaRestoration(20); // Przywraca many
-
+        });
 
         // Dodaj więcej akcji dla innych buffów, jeśli potrzebujesz
     }
