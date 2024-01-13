@@ -27,6 +27,16 @@ public class StreetFightSimulator {
                 System.out.println("Pora na spokojną przechadzkę po naszym pięknym wigwizdowie. " +
                         "\nAle coż to, twój pierwszy przeciwnik wyłania się z za winkla!");
                 // ROZPOCZNIJ WALKĘ
-                Fight.fight(player);
+                int battles = 0;
+                while(!player.isDead){
+                        //if(battles%3==0){
+                                    //bossfight
+                        //}
+                        //else {
+                        Fight.fight(player);
+                        //}
+                        if(!player.isDead){
+                              System.out.println("Gratulacje użytkowniku, wygrałeś nowy Iphone 6S");     
+                }
             }
         }
