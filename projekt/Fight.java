@@ -13,7 +13,7 @@ public class Fight {
         Scanner input = new Scanner(System.in);
         Items items = new Items();
         System.out.println("Pojawił się twój przeciwnik:");
-        System.out.println(enemy.toString());
+        System.out.println(enemy);
         System.out.println("Rozpoczynamy walkę!");
 
         while (!player.isDead() && !enemy.isDead()) {
@@ -45,6 +45,9 @@ public class Fight {
 
             if (!enemy.isDead()) {
                 enemyTurn(player, enemy);
+                System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
+                player.getHealthPoints(), player.getManaPoints(),
+                enemy.getHealthPoints(), enemy.getManaPoints());
             }
         }
 
