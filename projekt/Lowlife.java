@@ -13,6 +13,7 @@ public class Lowlife extends Hobo {
         System.out.println(getName() + " używa specjalnego ataku!");
         target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
         this.manaPoints -= 10; // Odejmuje 10 punktów many po użyciu specjalnego ataku
+  }
 
     public void attack(Hobo target) {
         System.out.println(getName() + " daje ci z łokcia\n-" + getAttackPoints() + " HP.");
