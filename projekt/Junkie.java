@@ -1,8 +1,11 @@
 public class Junkie extends Hobo {
     private int attackPoints;
+    private String title;
+    private String className;
 
-    public Patus(String name, String gender) {
+    public Junkie(String name, String gender, String title) {
         super(name, gender);
+        this.title = title;
         this.className = "Ćpun";
         this.attackPoints = 10;
     }
