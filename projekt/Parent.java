@@ -1,8 +1,11 @@
 public class Parent extends Hobo {
     private int attackPoints;
+    private String title;
+    private String className;
 
-    public Parent(String name, String gender) {
+    public Parent(String name, String gender, String title) {
         super(name, gender);
+        this.title = title;
         this.className = "Karyna";
         this.attackPoints = 10;
     }
