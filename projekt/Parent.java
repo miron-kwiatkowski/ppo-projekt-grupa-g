@@ -1,7 +1,7 @@
-public class Karyna extends Hobo {
+public class Parent extends Hobo {
     private int attackPoints;
 
-    public Patus(String name, String gender) {
+    public Parent(String name, String gender) {
         super(name, gender);
         this.className = "Karyna";
         this.attackPoints = 10;
