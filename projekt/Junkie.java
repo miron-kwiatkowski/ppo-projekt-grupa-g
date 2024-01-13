@@ -8,6 +8,7 @@ public class Junkie extends Hobo {
         this.title = title;
         this.className = "Ćpun";
         this.attackPoints = 10;
+        this.item = "Strzykawka";
     }
 
     public int getAttackPoints() {
