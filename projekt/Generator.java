@@ -1,11 +1,78 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.ArrayList;
+
 
 public class Generator{
     private static final List<String> maleFirstNames = Arrays.asList("Mietek", "Ryszard", "Zdzichu", "Mścichuj", "Moczywór", "Andrzej", "Józek", "Stachu", "Bolek", "Marian", "Brajan", "Tadek", "Ferdek", "Bożydar");
-    private static final List<String> femaleFirstNames = Arrays.asList("Karyna", "Nikola", "Andżelika", "Dżesika", "Elka", "Helena", "Halina", "Bożenka", "Jebodyda", "Mścisława", "Kaśka", "Klaudia", "Żanetka", "Renata", "Mariola");
-    private static final List<String> origin = Arrays.asList("spod Lidla", "spod Żabki", "spod Kościoła", "z rowu", "spod Biedronki", "spod śmietnika", "z zaułka", "z piwnicy", "spod mostu", "z mlekiem");
+    private static final List<String> femaleFirstNames = Arrays.asList("Karyna", "Nikola", "Andżelika", "Dżeskia", "Elka", "Helena", "Halina", "Bożenka", "Jebodyda", "Mścisława", "Kaśka", "Klaudia", "Żanetka", "Renata", "Mariola");
+    private static final List<String> titles = Arrays.asList("spod Lidla");
     
+
+    private static final Random random = new Random();
+
+    private static String getRandomElement(List<String> list){
+        int id = random.nextInt(list.size());
+        return list.get(id);
+    }
+
+    public static String generateRandomMale(){
+        String firstName;
+
+        firstName = getRandomElement(maleFirstNames);
+
+        return firstName;
+    }
+
+    public static String generateRandomFemale(){
+        String firstName;
+
+        firstName = getRandomElement(femaleFirstNames);
+
+        return firstName;
+    }
+
+    public static String generateRandomTitle(){
+        String title;
+
+        title = getRandomElement(titles);
+
+        return title;
+    }
+
+    public static Hobo generateRandomEnemy(){
+        double tester = Math.random();
+        if(tester<1.0/4.0){
+            if(Math.random()<0.5){
+                return new Junkie(generateRandomMale(), "m", generateRandomTitle());
+            }
+            else {
+                return new Junkie(generateRandomFemale(), "f", generateRandomTitle());
+            }
+        }
+        else if(tester<2.0/4.0){
+            if(Math.random()<0.5){
+                return new Menel(generateRandomMale(), "m", generateRandomTitle());
+            }
+            else {
+                return new Menel(generateRandomFemale(), "f", generateRandomTitle());
+            }
+        }
+        else if(tester<3.0/4.0){
+            if(Math.random()<0.5){
+                return new Parent(generateRandomMale(), "m", generateRandomTitle());
+            }
+            else {
+                return new Parent(generateRandomFemale(), "f", generateRandomTitle());
+            }
+        }
+        else {
+            if(Math.random()<0.5){
+                return new Patus(generateRandomMale(), "m", generateRandomTitle());
+            }
+            else {
+                return new Patus(generateRandomFemale(), "f", generateRandomTitle());
+            }
+        }
+    }
 }
