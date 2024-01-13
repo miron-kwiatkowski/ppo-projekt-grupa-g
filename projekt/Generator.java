@@ -52,10 +52,10 @@ public class Generator{
         }
         else if(tester<2.0/4.0){
             if(Math.random()<0.5){
-                return new Menel(generateRandomMale(), "m", generateRandomTitle());
+                return new StreetDweller(generateRandomMale(), "m", generateRandomTitle());
             }
             else {
-                return new Menel(generateRandomFemale(), "f", generateRandomTitle());
+                return new StreetDweller(generateRandomFemale(), "f", generateRandomTitle());
             }
         }
         else if(tester<3.0/4.0){
