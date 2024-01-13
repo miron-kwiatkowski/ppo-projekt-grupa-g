@@ -12,7 +12,7 @@ public class Patus extends Hobo {
     }
 
     public void attack(Hobo target) {
-        System.out.println(getName() + " Daje ci z łokcia\n-" + getAttackPoints() + " HP.");
+        System.out.println(getName() + " daje ci z łokcia\n-" + getAttackPoints() + " HP.");
         target.takeHit(getAttackPoints());
     }
 
