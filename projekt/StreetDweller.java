@@ -1,9 +1,9 @@
-public class Menel extends Hobo {
+public class StreetDweller extends Hobo {
     private int attackPoints;
     private String title;
     private String className;
 
-    public Menel(String name, String gender, String title) {
+    public StreetDweller(String name, String gender, String title) {
         super(name, gender);
         this.title = title;
         this.className = "Menel";
