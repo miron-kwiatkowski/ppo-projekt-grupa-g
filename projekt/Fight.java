@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.until.Random;
+import java.util.Random;
 
 public class Fight {
     public static void fight(Hobo player) {
