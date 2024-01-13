@@ -27,8 +27,8 @@ public class Items {
             player.takeHit(15); // Przykładowa wartość obrażeń od bombelka
         });
 
-         itemActions.put("Laczek", player -> {
-            System.out.println("Gracz uderza laczkiem!");
+         itemActions.put("Kij", player -> {
+            System.out.println("Gracz uderza kijem od miotły!");
             player.takeHit(10); // Przykładowa wartość obrażeń od laczka
         });
          itemActions.put("Strzykawka", player -> {
