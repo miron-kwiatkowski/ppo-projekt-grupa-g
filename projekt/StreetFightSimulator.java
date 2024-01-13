@@ -38,5 +38,6 @@ public class StreetFightSimulator {
                         if(!player.isDead(){
                               System.out.println("Gratulacje użytkowniku, wygrałeś nowy Iphone 6S");     
                 }
+                            battles++;
             }
         }
