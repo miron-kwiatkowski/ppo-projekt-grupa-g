@@ -1,12 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
-import java.util.Random;
 
 public class Items {
 
-    private Map<String, Consumer<Hobo>> itemActions;
-    private Map<String, Consumer<Hobo>> buffActions; // Przeniesiona deklaracja na poziom klasy
+    private static Map<String, Consumer<Hobo>> itemActions;
+    private static Map<String, Consumer<Hobo>> buffActions; // Przeniesiona deklaracja na poziom klasy
 
     public Items() {
         initializeItemActions();
@@ -86,17 +84,17 @@ public class Items {
         });
     }
 
-    public String randomBuff() {
+    public static String randomBuff() {
         List<String> buffNames = new ArrayList<>(buffActions.keySet());
         int randomIndex = new Random().nextInt(buffNames.size());
         return buffNames.get(randomIndex);
     }
 
-    public void itemsUse(String itemName, Hobo player) {
+    public static void itemsUse(String itemName, Hobo player) {
         itemActions.getOrDefault(itemName, player1 -> System.out.println("Nieznany przedmiot: " + itemName)).accept(player);
     }
 
-    public void itemsBuffs(String buffName, Hobo player) {
+    public static void itemsBuffs(String buffName, Hobo player) {
         buffActions.getOrDefault(buffName, player1 -> System.out.println("Nieznany buff: " + buffName)).accept(player);
     }
 }
