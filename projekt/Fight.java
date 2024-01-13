@@ -104,6 +104,7 @@ private static void enemyTurn(Hobo player, Hobo enemy) {
              items.itemsUse(enemy.getItemName(), player);
             break;
         case 4:
+            String itemName = randomBuff();
             System.out.println(enemy.getName() + " regeneruje siły!");
             items.itemsBuffs(itemName, enemy);
             break;
