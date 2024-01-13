@@ -14,18 +14,28 @@ public class Items {
 
     private void initializeItemActions() {
         itemActions = new HashMap<>();
-        itemActions.put("klejpała", player -> {
-            System.out.println("Gracz używa klejpały!");
-            player.takeHit(15); // Przykładowa wartość obrażeń od klejpały
+        itemActions.put("Klejpała", player -> {
+            System.out.println("Gracz rzuca klejpałą!");
+            player.takeHit(5); // Przykładowa wartość obrażeń od klejpały
         });
-        itemActions.put("tulipan", player -> {
-            System.out.println("Gracz używa tulipana");
+        itemActions.put("Tulipan", player -> {
+            System.out.println("Gracz uderza tulipanem!");
             player.takeHit(10); // Przykładowa wartość obrażeń od tulipana
         });
-        itemActions.put("bombelek", player -> {
-            System.out.println("Gracz używa bombelka");
-            player.takeHit(20); // Przykładowa wartość obrażeń od bombelka
+        itemActions.put("Bombelek", player -> {
+            System.out.println("Gracz rzuca bombelka!");
+            player.takeHit(15); // Przykładowa wartość obrażeń od bombelka
         });
+
+         itemActions.put("Laczek", player -> {
+            System.out.println("Gracz uderza laczkiem!");
+            player.takeHit(10); // Przykładowa wartość obrażeń od laczka
+        });
+         itemActions.put("Strzykawka", player -> {
+            System.out.println("Gracz używa zużytej strzykawki! Zadaje większe obrażenia, ale dostał również HIV!");
+            player.takeHit(10); // Przykładowa wartość obrażeń od tulipana
+        });
+
         // Dodaj więcej akcji dla innych przedmiotów, jeśli potrzebujesz
     }
 
