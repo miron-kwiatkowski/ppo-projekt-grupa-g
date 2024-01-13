@@ -22,8 +22,12 @@ public class Fight {
             String command = input.next();
             String parameter = "";
 
-            if (command.equals("b") || command.equals("d")) {
-                System.out.println("Podaj nazwę przedmiotu/buffa:");
+            if (command.equals("b")) {
+                System.out.println("Podaj nazwę przedmiotu:");
+                parameter = input.next();
+            }
+            else if(command.equals("d")){
+                System.out.println("Podaj nazwę buffa:");
                 parameter = input.next();
             }
 
