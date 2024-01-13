@@ -9,9 +9,10 @@ class Hobo {
     private int manaPoints;
     private int attackPoints;
 
-    public Hobo(String name,String gender) {
+    public Hobo(String name, String gender, String title) {
         this.gender = "gender";
         this.name = name;
+        this.title = title;
         this.className="Żul";
         this.healthPoints = 100;
         this.manaPoints = 100;
