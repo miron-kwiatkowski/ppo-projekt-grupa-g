@@ -68,10 +68,10 @@ public class Generator{
         }
         else {
             if(Math.random()<0.5){
-                return new Patus(generateRandomMale(), "m", generateRandomTitle());
+                return new Lowlife(generateRandomMale(), "m", generateRandomTitle());
             }
             else {
-                return new Patus(generateRandomFemale(), "f", generateRandomTitle());
+                return new Lowlife(generateRandomFemale(), "f", generateRandomTitle());
             }
         }
     }
