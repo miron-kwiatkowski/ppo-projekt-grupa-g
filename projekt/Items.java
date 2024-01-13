@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.Random;
 
 public class Items {
 
@@ -83,8 +84,12 @@ public class Items {
             System.out.println("Gracz pije napój bogów - wodę ognistą!");
             player.applyManaRestoration(20); // Przywraca many
         });
+    }
 
-        // Dodaj więcej akcji dla innych buffów, jeśli potrzebujesz
+    public String randomBuff() {
+        List<String> buffNames = new ArrayList<>(buffActions.keySet());
+        int randomIndex = new Random().nextInt(buffNames.size());
+        return buffNames.get(randomIndex);
     }
 
     public void itemsUse(String itemName, Hobo player) {
