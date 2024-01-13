@@ -1,6 +1,5 @@
 public class Lowlife extends Hobo {
     private int attackPoints;
-    private String item;
 
     public Lowlife(String name, String gender, String title) {
         super(name, gender);
@@ -17,10 +16,6 @@ public class Lowlife extends Hobo {
     public void attack(Hobo target) {
         System.out.println(getName() + " daje ci z łokcia\n-" + getAttackPoints() + " HP.");
         target.takeHit(getAttackPoints());
-    }
-
-    public String getItemName(){
-        return item;
     }
 
     @Override
