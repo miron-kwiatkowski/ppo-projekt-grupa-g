@@ -7,7 +7,7 @@ public class Patus extends Hobo {
         this.title = title;
         this.className = "Patus";
         this.attackPoints = 10;
-        this.item = "nazwa itemu";
+        this.item = "Kij";
     }
 
     public int getAttackPoints() {
