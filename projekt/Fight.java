@@ -6,12 +6,11 @@ public class Fight {
         Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
         Items items = new Items();
+        System.out.println("Pojawił się twój przeciwnik:");
+        System.out.println(enemy.toString());
         System.out.println("Rozpoczynamy walkę!");
 
         while (!player.isDead() && !enemy.isDead()) {
-            System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
-                    player.getHealthPoints(), player.getManaPoints(),
-                    enemy.getHealthPoints(), enemy.getManaPoints());
 
             System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
             System.out.println("a - Atak");
@@ -34,7 +33,6 @@ public class Fight {
 
             playerTurn(player, enemy, items, command, parameter);
 
-            // Wyświetlanie statystyk po wykonaniu ruchu przez gracza
             System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
                     player.getHealthPoints(), player.getManaPoints(),
                     enemy.getHealthPoints(), enemy.getManaPoints());
@@ -101,12 +99,12 @@ private static void enemyTurn(Hobo player, Hobo enemy) {
             break;
         case 3:
             System.out.println(enemy.getName() + " używa specjalnego przedmiotu!");
-             items.itemsUse(enemy.getItemName(), player);
+             Items.itemsUse(enemy.getItemName(), player);
             break;
         case 4:
-            String itemName = randomBuff();
+            String itemName = Items.randomBuff();
             System.out.println(enemy.getName() + " regeneruje siły!");
-            items.itemsBuffs(itemName, enemy);
+            Items.itemsBuffs(itemName, enemy);
             break;
         default:
             // Domyślnie nie powinno się znaleźć w tym miejscu, chyba że coś poszło nie tak
