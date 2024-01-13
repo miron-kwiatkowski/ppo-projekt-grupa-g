@@ -33,7 +33,7 @@ public class Items {
             player.takeHit(10); // dla patusów
         });
          itemActions.put("Strzykawka", player -> {
-            System.out.println("Gracz używa zużytej strzykawki! Zadaje większe obrażenia, ale dostał również HIV!");
+            System.out.println("Gracz używa zużytej strzykawki! Zadajesz większe obrażenia, ale dostajesz również HIV!");
             player.takeHit(15); // dla ćpuna
         });
 
