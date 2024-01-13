@@ -46,8 +46,8 @@ public class Fight {
             if (!enemy.isDead()) {
                 enemyTurn(player, enemy);
                 System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
-                player.getHealthPoints(), player.getManaPoints(),
-                enemy.getHealthPoints(), enemy.getManaPoints());
+                        player.getHealthPoints(), player.getManaPoints(),
+                        enemy.getHealthPoints(), enemy.getManaPoints());
             }
         }
 
@@ -65,32 +65,60 @@ public class Fight {
 
     private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) {
         Help help = new Help();
-        try {
-            switch (command) {
-                case "a": // atak
-                    enemy.takeHit(player.getAttackPoints());
-                    break;
-                case "b": // użycie przedmiotu na wrogu
-                    items.itemsUse(parameter, enemy);
-                    break;
-                case "c": // specjalny atak
-                    if (player.getManaPoints() >= 10) {
-                        player.specialAttack(enemy);
-                    } else {
-                        System.out.println("Nie masz wystarczająco many do użycia specjalnego ataku!");
-                    }
-                    break;
-                case "d": // użycie buffa
-                    items.itemsBuffs(parameter, player);
-                    break;
-                case "help": // info
-                    help.help("");
-                    break;
-                default:
-                    System.out.println("Nieprawidłowa komenda!");
+        Scanner input = new Scanner(System.in);
+        boolean validCommand = false;
+
+        while (!validCommand) {
+            try {
+                switch (command) {
+                    case "a": // atak
+                        enemy.takeHit(player.getAttackPoints());
+                        validCommand = true;
+                        break;
+                    case "b": // użycie przedmiotu na wrogu
+                        items.itemsUse(parameter, enemy);
+                        validCommand = true;
+                        break;
+                    case "c": // specjalny atak
+                        if (player.getManaPoints() >= 10) {
+                            player.specialAttack(enemy);
+                            validCommand = true;
+                        } else {
+                            System.out.println("Nie masz wystarczająco many do użycia specjalnego ataku!");
+                        }
+                        break;
+                    case "d": // użycie buffa
+                        items.itemsBuffs(parameter, player);
+                        validCommand = true;
+                        break;
+                    case "help": // info
+                        help.help("");
+                        System.out.println("Twoja tura zostanie powtórzona.");
+                        break;
+                    default:
+                        System.out.println("Nieprawidłowa komenda!");
+                        System.out.println("Twoja tura zostanie powtórzona.");
+                }
+
+            } catch (Exception e) {
+                System.out.println("Wystąpił błąd: " + e.getMessage());
+                System.out.println("Twoja tura zostanie powtórzona.");
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+
+            if (!validCommand) {
+                System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
+                System.out.println("a - Atak");
+                System.out.println("b - Użyj przedmiotu");
+                System.out.println("c - Specjalny Atak");
+                System.out.println("d - Użyj buffa");
+                System.out.println("help - Informacje o dostępnych akcjach");
+
+                command = input.next();
+                if (command.equals("b") || command.equals("d")) {
+                    System.out.println("Podaj nazwę przedmiotu:");
+                    parameter = input.next();
+                }
+            }
         }
     }
 
@@ -144,6 +172,7 @@ public class Fight {
                 System.out.println("Coś poszło nie tak przy losowaniu akcji przeciwnika!");
                 break;
         }
-        
+
     }
 }
+
