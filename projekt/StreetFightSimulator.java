@@ -18,7 +18,8 @@ public class StreetFightSimulator {
                 } else {
                     System.out.println("Nieprawidłowy wybór płci."); //TU BĘDZIE BŁĄD WSTAWIONY (ogólnie to zmienimy xd)
                 }
-                Hobo player = new Hobo(name, gender);
+                String title = Generator.generateRandomTitle();
+                Hobo player = new Hobo(name, gender, title);
                 System.out.println("Witaj, " + name + "! Cieszę się, że dołączyłeś do symulatora walk ulicznych.");
                 System.out.println(player.toString());
 
