@@ -15,15 +15,15 @@ public class Items {
     private void initializeItemActions() {
         itemActions = new HashMap<>();
         itemActions.put("Klejpała", player -> {
-            System.out.println("Gracz rzuca klejpałą!");
+            System.out.println("Gracz rzuca klejpałą wygrzebaną ze śmietnika!");
             player.takeHit(5); // Przykładowa wartość obrażeń od klejpały
         });
         itemActions.put("Tulipan", player -> {
-            System.out.println("Gracz uderza tulipanem!");
+            System.out.println("Gracz uderza tulipanem z butelki po tanim winie!");
             player.takeHit(10); // Przykładowa wartość obrażeń od tulipana
         });
         itemActions.put("Bombelek", player -> {
-            System.out.println("Gracz rzuca bombelka!");
+            System.out.println("Gracz rzuca bombelka! Ma ich sporą amunicję dzięki 500+");
             player.takeHit(15); // Przykładowa wartość obrażeń od bombelka
         });
 
