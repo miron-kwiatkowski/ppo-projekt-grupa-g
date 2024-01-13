@@ -12,7 +12,7 @@ public class Menel extends Hobo {
     }
 
     public void attack(Hobo target) {
-        System.out.println(getName() + " Hara na ciebie\n-" + getAttackPoints() + " HP.");
+        System.out.println(getName() + " hara na ciebie\n-" + getAttackPoints() + " HP.");
         target.takeHit(getAttackPoints());
     }
 
