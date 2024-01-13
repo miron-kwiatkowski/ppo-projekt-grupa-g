@@ -12,7 +12,7 @@ public class Karyna extends Hobo {
     }
 
     public void attack(Hobo target) {
-        System.out.println(getName() + " Wyzywa cię od nierobów\n-" + getAttackPoints() + " HP.");
+        System.out.println(getName() + " wyzywa cię od nierobów\n-" + getAttackPoints() + " HP.");
         target.takeHit(getAttackPoints());
     }
 
