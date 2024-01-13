@@ -50,7 +50,7 @@ class Hobo {
     public int getManaPoints() {
         return manaPoints;
     }
-    public String getItem() {
+    public String getItemName() {
         return item;
     }
 
