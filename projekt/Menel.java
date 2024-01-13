@@ -1,8 +1,11 @@
 public class Menel extends Hobo {
     private int attackPoints;
+    private String title;
+    private String className;
 
-    public Patus(String name, String gender) {
+    public Menel(String name, String gender, String title) {
         super(name, gender);
+        this.title = title;
         this.className = "Menel";
         this.attackPoints = 10;
     }
