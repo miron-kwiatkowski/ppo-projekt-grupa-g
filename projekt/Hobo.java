@@ -15,7 +15,7 @@ class Hobo {
         this.className="Żul";
         this.healthPoints = 100;
         this.manaPoints = 100;
-        this.item = "item";
+        this.item = "Tulipan";
         this.attackPoints = generateRandomAttackPoints();
     }
 
