@@ -42,13 +42,46 @@ public class Items {
     private void initializeBuffActions() {
         buffActions = new HashMap<>();
         buffActions.put("Batonik", player -> {
-            System.out.println("Gracz używa batonika!");
+            System.out.println("Gracz zjada batonika!");
+            player.applyHealing(5); // Przywraca zdrowie
+        });
+
+         buffActions = new HashMap<>();
+         buffActions.put("Pizza", player -> {
+            System.out.println("Gracz zjadł starą pizzę!");
+            player.applyHealing(20); // Przywraca zdrowie
+        });
+        
+         buffActions = new HashMap<>();
+         buffActions.put("Mortadela", player -> {
+            System.out.println("Gracz zjada najtańszą mortadelę!");
             player.applyHealing(15); // Przywraca zdrowie
         });
+
+         buffActions = new HashMap<>();
+        buffActions.put("Bułka", player -> {
+            System.out.println("Gracz zjada tanią i pożywną kajzerkę!");
+            player.applyHealing(10); // Przywraca zdrowie
+        });
+
+        buffActions.put("Winko", player -> {
+            System.out.println("Gracz wypija tanie winko");
+            player.applyManaRestoration(10); // Przywraca many
+
+        });
         buffActions.put("Amarenka", player -> {
-            System.out.println("Gracz używa amarenki");
+            System.out.println("Gracz pije mirabelkową amarenkę");
             player.applyManaRestoration(10); // Przywraca many
         });
+
+        buffActions.put("Piwko", player -> {
+            System.out.println("Gracz wypija najtańsze piwko z Biedronki - Piwo VIP, za całe 1,99 za puszkę!");
+            player.applyManaRestoration(10); // Przywraca many
+        });
+
+        buffActions.put("Amarenka", player -> {
+            System.out.println("Gracz pije mirabelkową amarenkę");
+            player.applyManaRestoration(10); // Przywraca many
         // Dodaj więcej akcji dla innych buffów, jeśli potrzebujesz
     }
 
