@@ -100,7 +100,6 @@ private static void enemyTurn(Hobo player, Hobo enemy) {
             break;
         case 4:
             System.out.println(enemy.getName() + " regeneruje siły!");
-            items.itemsBuffs(enemy.getBuffName(), enemy);
             break;
         default:
             // Domyślnie nie powinno się znaleźć w tym miejscu, chyba że coś poszło nie tak
