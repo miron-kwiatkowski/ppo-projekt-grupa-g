@@ -8,11 +8,16 @@ public class Help {
                 break;
             case "b":
                 System.out.println("Tu jest lista buffów do użytku xd");
-                // Print information about buffs
+                System.out.println("Batonik - ");
+                System.out.println("Amarenka - ");
                 break;
             case "ia":
-                System.out.println("Tu jest lista broni do użytku");
-                // Print information about weapons
+                System.out.println("Tu jest lista broni do użytku, jeśli je posiadasz");
+                System.out.println("Klejpała - ");
+                System.out.println("Tulipan - ");
+                System.out.println("Bombelek - ");
+                System.out.println("Laczek - ");
+                System.out.println("Strzykawka - ");
                 break;
             default:
                 System.out.println("błąd xd");
