@@ -48,7 +48,7 @@ public class Items {
 
          buffActions = new HashMap<>();
          buffActions.put("Pizza", player -> {
-            System.out.println("Gracz zjadł starą pizzę!");
+            System.out.println("Gracz zjada starą pizzę!");
             player.applyHealing(20); // Przywraca zdrowie
         });
         
@@ -65,23 +65,25 @@ public class Items {
         });
 
         buffActions.put("Winko", player -> {
-            System.out.println("Gracz wypija tanie winko");
-            player.applyManaRestoration(10); // Przywraca many
+            System.out.println("Gracz pije tanie winko");
+            player.applyManaRestoration(5); // Przywraca many
 
         });
         buffActions.put("Amarenka", player -> {
             System.out.println("Gracz pije mirabelkową amarenkę");
-            player.applyManaRestoration(10); // Przywraca many
+            player.applyManaRestoration(15); // Przywraca many
         });
 
         buffActions.put("Piwko", player -> {
-            System.out.println("Gracz wypija najtańsze piwko z Biedronki - Piwo VIP, za całe 1,99 za puszkę!");
+            System.out.println("Gracz pije najtańsze piwko z Biedronki - Piwo VIP, za całe 1,99 za puszkę!");
             player.applyManaRestoration(10); // Przywraca many
         });
 
-        buffActions.put("Amarenka", player -> {
-            System.out.println("Gracz pije mirabelkową amarenkę");
-            player.applyManaRestoration(10); // Przywraca many
+        buffActions.put("Wódeczka", player -> {
+            System.out.println("Gracz pije napój bogów - wodę ognistą!");
+            player.applyManaRestoration(20); // Przywraca many
+
+
         // Dodaj więcej akcji dla innych buffów, jeśli potrzebujesz
     }
 
