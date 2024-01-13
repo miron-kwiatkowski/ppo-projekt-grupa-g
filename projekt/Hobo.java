@@ -3,16 +3,16 @@ class Hobo {
     private String name;
     private String gender;
     String className;
-    private String title;
-    private String item;
+    String title;
+    String item;
     private int healthPoints;
     private int manaPoints;
     private int attackPoints;
 
-    public Hobo(String name, String gender, String title) {
+    public Hobo(String name, String gender) {
         this.gender = "gender";
         this.name = name;
-        this.title = title;
+        this.title = "z Podlasia";
         this.className="Żul";
         this.healthPoints = 100;
         this.manaPoints = 100;
@@ -63,4 +63,8 @@ class Hobo {
     }
     public boolean isDead() {
         return healthPoints <= 0;
-    }}
+    }
+
+    public void attack(Hobo player) {
+    }
+}
