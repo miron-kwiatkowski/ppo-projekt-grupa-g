@@ -1,13 +1,13 @@
 import java.util.Random;
 class Hobo {
-    private String name;
-    private String gender;
+    String name;
+    String gender;
     String className;
     String title;
     String item;
-    private int healthPoints;
-    private int manaPoints;
-    private int attackPoints;
+    int healthPoints;
+    int manaPoints;
+    int attackPoints;
 
     public Hobo(String name, String gender) {
         this.gender = "gender";
