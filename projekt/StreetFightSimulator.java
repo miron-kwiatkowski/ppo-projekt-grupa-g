@@ -23,11 +23,9 @@ public class StreetFightSimulator {
                 System.out.println(player.toString());
 
                 //GENERUJ PIERWSZEGO PRZECIWNIKA - tu wylosować
-                Hobo enemy1 = new Lowlife("Seba","m");
                 System.out.println("Pora na spokojną przechadzkę po naszym pięknym wigwizdowie. " +
                         "\nAle coż to, twój pierwszy przeciwnik wyłania się z za winkla!");
-                System.out.println(enemy1.toString());
                 // ROZPOCZNIJ WALKĘ
-                Fight.fight(player, enemy1);
+                Fight.fight(player);
             }
         }
