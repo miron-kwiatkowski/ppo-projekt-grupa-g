@@ -8,6 +8,7 @@ public class Menel extends Hobo {
         this.title = title;
         this.className = "Menel";
         this.attackPoints = 10;
+        this.item = "Klejpała";
     }
 
     public int getAttackPoints() {
