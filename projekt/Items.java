@@ -33,7 +33,7 @@ public class Items {
         });
          itemActions.put("Strzykawka", player -> {
             System.out.println("Gracz używa zużytej strzykawki! Zadaje większe obrażenia, ale dostał również HIV!");
-            player.takeHit(10); // dla ćpuna
+            player.takeHit(15); // dla ćpuna
         });
 
         // Dodaj więcej akcji dla innych przedmiotów, jeśli potrzebujesz
