@@ -2,7 +2,8 @@ import java.util.Scanner;
 import java.until.Random;
 
 public class Fight {
-    public static void fight(Hobo player, Hobo enemy) {
+    public static void fight(Hobo player) {
+        Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
         Items items = new Items();
         System.out.println("Rozpoczynamy walkę!");
