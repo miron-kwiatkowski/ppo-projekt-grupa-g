@@ -12,7 +12,7 @@ public class Junkie extends Hobo {
     }
 
     public void attack(Hobo target) {
-        System.out.println(getName() + " Zaczął ci grozić\n-" + getAttackPoints() + " HP.");
+        System.out.println(getName() + " Grozi ci\n-" + getAttackPoints() + " HP.");
         target.takeHit(getAttackPoints());
     }
 
