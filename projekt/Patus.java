@@ -3,8 +3,9 @@ public class Patus extends Hobo {
     private String item;
     private String buff;
 
-    public Patus(String name, String gender) {
+    public Patus(String name, String gender, String title) {
         super(name, gender);
+        this.title = title;
         this.className = "Patus";
         this.attackPoints = 10;
         this.item = "nazwa itemu";
