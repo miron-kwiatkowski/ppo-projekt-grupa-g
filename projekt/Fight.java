@@ -2,6 +2,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Fight {
+
+    private static final int NORMAL_ATTACK_PROBABILITY = 50;  // Prawdopodobieństwo zwykłego ataku (w procentach)
+    private static final int SPECIAL_ATTACK_PROBABILITY = 20; // Prawdopodobieństwo specjalnego ataku
+    private static final int ITEM_USE_PROBABILITY = 15;      // Prawdopodobieństwo użycia specjalnego przedmiotu
+    private static final int BUFF_USE_PROBABILITY = 10;      // Prawdopodobieństwo użycia buffa
+
     public static void fight(Hobo player) {
         Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
@@ -85,31 +91,56 @@ public class Fight {
         }
     }
 
-private static void enemyTurn(Hobo player, Hobo enemy) {
-    int action = new Random().nextInt(4) + 1;
+    private static int chooseEnemyAction() {
+        int randomNumber = new Random().nextInt(100) + 1; // Losujemy liczbę od 1 do 100
 
-    switch (action) {
-        case 1:
-            System.out.println(enemy.getName() + " atakuje ciebie!");
-            enemy.attack(player);
-            break;
-        case 2:
-            System.out.println(enemy.getName() + " używa specjalnego ataku!");
-            enemy.specialAttack(player);
-            break;
-        case 3:
-            System.out.println(enemy.getName() + " używa specjalnego przedmiotu!");
-             Items.itemsUse(enemy.getItemName(), player);
-            break;
-        case 4:
-            String itemName = Items.randomBuff();
-            System.out.println(enemy.getName() + " regeneruje siły!");
-            Items.itemsBuffs(itemName, enemy);
-            break;
-        default:
-            // Domyślnie nie powinno się znaleźć w tym miejscu, chyba że coś poszło nie tak
-            System.out.println("Coś poszło nie tak przy losowaniu akcji przeciwnika!");
-            break;
+        if (randomNumber <= NORMAL_ATTACK_PROBABILITY) {
+            return 1; // Zwykły atak
+        } else if (randomNumber <= NORMAL_ATTACK_PROBABILITY + SPECIAL_ATTACK_PROBABILITY) {
+            return 2; // Specjalny atak
+        } else if (randomNumber <= NORMAL_ATTACK_PROBABILITY + SPECIAL_ATTACK_PROBABILITY + ITEM_USE_PROBABILITY) {
+            return 3; // Użycie specjalnego przedmiotu
+        } else {
+            return 4; // Użycie buffa
+        }
     }
-}
+
+    private static boolean shouldUseBuff() {
+        // Prawdopodobieństwo użycia buffa, gdy poziom hp spadnie poniżej lub równo 25
+        return new Random().nextBoolean();
+    }
+
+    private static void enemyTurn(Hobo player, Hobo enemy) {
+        int action = chooseEnemyAction();
+
+        switch (action) {
+            case 1:
+                System.out.println(enemy.getName() + " atakuje ciebie!");
+                enemy.attack(player);
+                break;
+            case 2:
+                System.out.println(enemy.getName() + " używa specjalnego ataku!");
+                enemy.specialAttack(player);
+                break;
+            case 3:
+                System.out.println(enemy.getName() + " używa specjalnego przedmiotu!");
+                Items.itemsUse(enemy.getItemName(), player);
+                break;
+            case 4:
+                if (player.getHealthPoints() <= 25 && shouldUseBuff()) {
+                    String itemName = Items.randomBuff();
+                    System.out.println(enemy.getName() + " regeneruje siły!");
+                    Items.itemsBuffs(itemName, enemy);
+                } else {
+                    // Jeśli warunek na buff nie jest spełniony, wykonaj zwykły atak
+                    System.out.println(enemy.getName() + " atakuje ciebie!");
+                    enemy.attack(player);
+                }
+                break;
+            default:
+                System.out.println("Coś poszło nie tak przy losowaniu akcji przeciwnika!");
+                break;
+        }
+        
+    }
 }
