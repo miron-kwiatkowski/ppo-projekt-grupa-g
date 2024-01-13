@@ -1,9 +1,9 @@
-public class Madka extends Hobo {
+public class Karyna extends Hobo {
     private int attackPoints;
 
     public Patus(String name, String gender) {
         super(name, gender);
-        this.className = "Madka";
+        this.className = "Karyna";
         this.attackPoints = 10;
     }
 
