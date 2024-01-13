@@ -8,6 +8,7 @@ public class Parent extends Hobo {
         this.title = title;
         this.className = "Karyna";
         this.attackPoints = 10;
+        this.item = "Bombelek";
     }
 
     public int getAttackPoints() {
