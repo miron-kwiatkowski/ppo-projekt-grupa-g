@@ -1,7 +1,7 @@
 package Exceptions;
 public class InvalidCommandException extends Exceptions.InputException {
   public InvalidCommandException() {
-    super("Nieprawidłowe polecenie. Jeśli chcesz się dowiedzieć co możesz zrobić, wpisz \"help\"");
+    super("Nie umiesz pisać xD Spróbuj jeszcze raz, może się uda."););
   }
 
   @Override
