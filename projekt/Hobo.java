@@ -33,12 +33,12 @@ class Hobo {
 
     private int generateRandomAttackPoints() {
         Random random = new Random();
-        return random.nextInt(26) + 5; // Generates a random number between 5 and 30
+        return random.nextInt(40) + 10;
     }
 
     public void specialAttack(Hobo target) {
         System.out.println(getName() + " używa specjalnego ataku!");
-        target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
+        target.takeHit(getAttackPoints() + 15); // Atak specjalny zwiększa obrażenia o 10
         this.manaPoints -= 10; // Odejmuje 10 punktów many po użyciu specjalnego ataku
     }
     public void applyHealing(int healingPoints) {

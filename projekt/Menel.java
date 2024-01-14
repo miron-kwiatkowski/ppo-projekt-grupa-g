@@ -1,21 +1,18 @@
-public class StreetDweller extends Hobo {
+public class Menel extends Hobo {
     private int attackPoints;
     private String title;
     private String className;
 
-    public StreetDweller(String name, String gender, String title) {
+    public Menel(String name, String gender, String title) {
         super(name, gender);
         this.title = title;
         this.className = "Menel";
         this.attackPoints = 10;
-        this.item = "Klejpała";
     }
 
-  public void specialAttack(Hobo target) {
-        System.out.println(getName() + " używa specjalnego ataku!");
-        target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
-        this.manaPoints -= 10; // Odejmuje 10 punktów many po użyciu specjalnego ataku
-  }
+    public int getAttackPoints() {
+        return attackPoints;
+    }
 
     public void attack(Hobo target) {
         System.out.println(getName() + " hara na ciebie\n-" + getAttackPoints() + " HP.");

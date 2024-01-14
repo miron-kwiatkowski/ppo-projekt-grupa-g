@@ -1,3 +1,6 @@
+import Exceptions.InvalidCommandException;
+import Exceptions.UnknownItemException;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -8,7 +11,7 @@ public class Fight {
     private static final int ITEM_USE_PROBABILITY = 15;      // Prawdopodobieństwo użycia specjalnego przedmiotu
     private static final int BUFF_USE_PROBABILITY = 10;      // Prawdopodobieństwo użycia buffa
 
-    public static void fight(Hobo player) {
+    public static void fight(Hobo player) throws InvalidCommandException, UnknownItemException {
         Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
         Items items = new Items();
@@ -63,7 +66,7 @@ public class Fight {
         }
     }
 
-    private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) {
+    private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) throws InvalidCommandException {
         Help help = new Help();
         Scanner input = new Scanner(System.in);
         boolean validCommand = false;
@@ -93,19 +96,16 @@ public class Fight {
                         break;
                     case "help": // info
                         help.help("");
-                        System.out.println("Twoja tura zostanie powtórzona.");
+                        validCommand = true;
                         break;
                     default:
-                        System.out.println("Nieprawidłowa komenda!");
-                        System.out.println("Twoja tura zostanie powtórzona.");
+                        throw new InvalidCommandException();
                 }
-
-            } catch (Exception e) {
-                System.out.println("Wystąpił błąd: " + e.getMessage());
+            } catch (InvalidCommandException e) {
+                System.out.println("Błąd: " + e.getMessage());
                 System.out.println("Twoja tura zostanie powtórzona.");
-            }
 
-            if (!validCommand) {
+                // Dodatkowe kroki, jeśli są potrzebne
                 System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
                 System.out.println("a - Atak");
                 System.out.println("b - Użyj przedmiotu");
@@ -117,7 +117,14 @@ public class Fight {
                 if (command.equals("b") || command.equals("d")) {
                     System.out.println("Podaj nazwę przedmiotu:");
                     parameter = input.next();
+                } else {
+                    parameter = null;
                 }
+            } catch (UnknownItemException e) {
+                System.out.println("Błąd: Nieznany przedmiot - " + e.getItemName());
+                System.out.println("Twoja tura zostanie powtórzona.");
+                System.out.println("Podaj nazwę przedmiotu:");
+                parameter = input.next();
             }
         }
     }
@@ -141,7 +148,7 @@ public class Fight {
         return new Random().nextBoolean();
     }
 
-    private static void enemyTurn(Hobo player, Hobo enemy) {
+    private static void enemyTurn(Hobo player, Hobo enemy) throws InvalidCommandException, UnknownItemException {
         int action = chooseEnemyAction();
 
         switch (action) {
