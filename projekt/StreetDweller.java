@@ -4,7 +4,8 @@ public class StreetDweller extends Hobo {
     private String className;
 
     public StreetDweller(String name, String gender, String title) {
-        super(name, gender);
+        this.name = name;
+        this.gender = gender;
         this.title = title;
         this.className = "Menel";
         this.attackPoints = 10;
@@ -24,6 +25,6 @@ public class StreetDweller extends Hobo {
 
     @Override
     public String toString() {
-        return super.toString() + "\nAtakuje z siłą: " + getAttackPoints();
+        return className + name + "\nAtakuje z siłą: " + getAttackPoints();
     }
 }
