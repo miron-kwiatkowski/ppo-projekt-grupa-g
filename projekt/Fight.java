@@ -96,7 +96,22 @@ public class Fight {
                         break;
                     case "help": // info
                         help.help("");
-                        validCommand = true;
+                        System.out.println("Twoja tura zostanie powtórzona.");
+
+                        System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
+                        System.out.println("a - Atak");
+                        System.out.println("b - Użyj przedmiotu");
+                        System.out.println("c - Specjalny Atak");
+                        System.out.println("d - Użyj buffa");
+                        System.out.println("help - Informacje o dostępnych akcjach");
+
+                        command = input.next();
+                        if (command.equals("b") || command.equals("d")) {
+                            System.out.println("Podaj nazwę przedmiotu:");
+                            parameter = input.next();
+                        } else {
+                            parameter = null;
+                        }
                         break;
                     default:
                         throw new InvalidCommandException();
@@ -182,4 +197,3 @@ public class Fight {
 
     }
 }
-
