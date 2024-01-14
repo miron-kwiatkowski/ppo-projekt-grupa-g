@@ -2,7 +2,8 @@ public class Lowlife extends Hobo {
     private int attackPoints;
 
     public Lowlife(String name, String gender, String title) {
-        super(name, gender);
+        this.name = name;
+        this.gender = gender;
         this.title = title;
         this.className = "Patus";
         this.attackPoints = 10;
@@ -22,6 +23,6 @@ public class Lowlife extends Hobo {
 
     @Override
     public String toString() {
-        return super.toString() + "\nAtakuje z siłą: " + getAttackPoints();
+        return className + name + "\nAtakuje z siłą: " + getAttackPoints();
     }
 }
