@@ -3,7 +3,7 @@ public class Help {
     public Help help(String x) {
         switch (x) {
             case "":
-                System.out.println("Oto co możesz począć:");
+                System.out.println("Aby uzyskać informacje o broni wpisz "b". Jeśli jednak interesują cię napoje alkoholowe i zakąski, to wpisz "ia" ");
                 // Print help information
                 break;
             case "b":
