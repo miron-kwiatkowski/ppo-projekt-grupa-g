@@ -4,7 +4,8 @@ public class Parent extends Hobo {
     private String className;
 
     public Parent(String name, String gender, String title) {
-        super(name, gender);
+        this.name = name;
+        this.gender = gender;
         this.title = title;
         this.className = "Dysfunkcjonalny rodzic";
         this.attackPoints = 10;
