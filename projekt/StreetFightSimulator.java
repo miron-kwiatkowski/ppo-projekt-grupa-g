@@ -40,11 +40,11 @@ public class StreetFightSimulator {
                         battles++;
                     }
                 } catch (GenderException e) {
-                   throw new GenderException();
+                   System.out.println("Błąd: " + e.getMessage());
                 } catch (InvalidCommandException e) {
-                    throw new InvalidCommandException();
+                    System.out.println("Błąd: " + e.getMessage());
                 } catch (UnknownItemException e) {
-                    throw new RuntimeException(e);
+                    System.out.println("Błąd: " + e.getMessage());
                 }
             }
 }
