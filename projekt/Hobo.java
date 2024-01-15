@@ -1,13 +1,13 @@
 import java.util.Random;
 class Hobo {
-    String name;
-    String gender;
-    String className;
-    String title;
-    String item;
-    int healthPoints;
-    int manaPoints;
-    int attackPoints;
+   private String name;
+    private String gender;
+    private String className;
+    private String title;
+    private String item;
+    private int healthPoints;
+    private int manaPoints;
+    private int attackPoints;
 
     public Hobo(String name, String gender) {
         this.gender = gender;
@@ -39,7 +39,7 @@ class Hobo {
     public void specialAttack(Hobo target) {
         System.out.println(getName() + " używa specjalnego ataku!");
         target.takeHit(getAttackPoints() + 15); // Atak specjalny zwiększa obrażenia o 10
-        this.manaPoints -= 10; // Odejmuje 10 punktów many po użyciu specjalnego ataku
+        takeManaPoints(10);// Odejmuje 10 punktów many po użyciu specjalnego ataku
     }
     public void applyHealing(int healingPoints) {
         this.healthPoints = Math.min(100, this.healthPoints + healingPoints); // Nie przekracza maksymalnej ilości HP
@@ -50,9 +50,44 @@ class Hobo {
     }
     @Override
     public String toString() {
-        return String.format(name+" "+className+" "+title+"\nStatystyki: HP-"+getHealthPoints()+" MP-"+getManaPoints());
+        return String.format(getClassName()+" "+getName()+" "+getTitle()+"\nStatystyki: HP-"+getHealthPoints()+" MP-"+getManaPoints())+ "\nAtakuje z siłą: " + getAttackPoints();
     }
 
+    public String getTitle() {return title;}
+
+    public void setItem(String item) {
+        this.item = item;
+    }
+    public void setAttackPoints(int attackPoints) {
+        this.attackPoints = attackPoints;
+    }
+    public void setClassName(String className) {
+        this.className = className;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+    public void setManaPoints(int manaPoints) {
+        this.manaPoints = manaPoints;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getGender() {
+        return gender;
+    }
+
+    public String getItem() {
+        return item;
+    }
+
+    public String getClassName() {return className;}
     public String getName() {
         return name;
     }
@@ -65,10 +100,10 @@ class Hobo {
     public String getItemName() {
         return item;
     }
-
     public int getAttackPoints() {
         return attackPoints;
     }
+    public void takeManaPoints(int manaPoints){this.manaPoints = this.manaPoints-manaPoints;}
     public void takeHit(int hitPoints) {
         this.healthPoints = this.healthPoints - hitPoints;
     }
