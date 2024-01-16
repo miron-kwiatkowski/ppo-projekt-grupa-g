@@ -2,14 +2,14 @@ public class StreetDweller extends Hobo {
 
     public StreetDweller(String name, String gender, String title) {
         super(name, gender);
-        setTitle("z kerfura");
+        setTitle("spod Kerfura");
         setClassName("Menel");
         setAttackPoints(10);
         setItem("Klejpała");
     }
 
   public void specialAttack(Hobo target) {
-        System.out.println(getName() + " używa specjalnego ataku!");
+        System.out.println(getName() + " używa tajemnej techniki Chlaj-taj!");
         target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
         takeManaPoints(10);  // Odejmuje 10 punktów many po użyciu specjalnego ataku
   }
