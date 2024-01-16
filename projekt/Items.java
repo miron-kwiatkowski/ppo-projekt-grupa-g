@@ -69,6 +69,7 @@ public class Items {
         buffActions.put("mortadela", player -> {
             System.out.println("Gracz zjada najtańszą mortadelę!");
             player.applyHealing(30);
+             player.applyManaRestoration(5);  
         });
 
         buffActions.put("bułka", player -> {
