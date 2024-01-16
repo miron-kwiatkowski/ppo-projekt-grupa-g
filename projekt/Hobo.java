@@ -37,7 +37,7 @@ class Hobo {
     }
 
     public void specialAttack(Hobo target) {
-        System.out.println(getName() + " używa specjalnego ataku!");
+        System.out.println(getName() + " zbiera pokłady mistycznej energi i używa tajemnego ataku Wódzitsu!");
         target.takeHit(getAttackPoints() + 15); // Atak specjalny zwiększa obrażenia o 10
         takeManaPoints(10);// Odejmuje 10 punktów many po użyciu specjalnego ataku
     }
