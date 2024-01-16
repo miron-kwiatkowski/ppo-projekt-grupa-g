@@ -4,7 +4,7 @@ public class StreetDweller extends Hobo {
         super(name, gender, title);
         setClassName("Menel");
         setAttackPoints(10);
-        setItem("Klejpała");
+        setItem("klejpała");
     }
 
   public void specialAttack(Hobo target) {
