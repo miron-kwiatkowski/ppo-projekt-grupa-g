@@ -23,8 +23,8 @@ public class StreetFightSimulator {
                     System.out.println("Witaj, " + name + "! Cieszę się, że dołączyłeś do symulatora walk ulicznych.");
                     System.out.println(player.toString());
 
-                    System.out.println("Pora na spokojną przechadzkę po naszym pięknym wigwizdowie. " +
-                            "\nAle coż to, twój pierwszy przeciwnik wyłania się z za winkla!");
+                    System.out.println("Pora na spokojną przechadzkę po naszym pięknym wygwizdowie. " +
+                            "\nAle coż to, twój pierwszy przeciwnik wyłania się zza winkla!");
                     // ROZPOCZNIJ WALKĘ
                     int battles = 0;
                     while (!player.isDead()) {
