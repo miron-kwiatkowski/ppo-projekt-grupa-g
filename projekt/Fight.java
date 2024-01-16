@@ -13,16 +13,16 @@ public class Fight {
 
     private static void printMenu(){
         System.out.println();
-        System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
+        System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):\n");
         System.out.println("a - Atak");
         System.out.println("b - Użyj przedmiotu");
         System.out.println("c - Specjalny Atak");
         System.out.println("d - Użyj buffa");
-        System.out.println("q - Zakończ grę");
+        System.out.println("q - Zakończ grę (uwaga, proces jest nieodwracalny, na ulicy nie ma zapisów)");
     }
     private static void printItems(){
         System.out.println();
-        System.out.println("Tu jest lista broni do użytku, uwaga, jesteś lekko wstawiony i brakuje ci koordynacji, więc zadajesz obrażenia również sobie:");
+        System.out.println("Tu jest lista broni do użytku, uwaga, jesteś lekko wstawiony i brakuje ci koordynacji, więc zadajesz obrażenia również sobie:\n");
         System.out.println("Klejpała - Wyjęta ze śmietnika, potężna laska kleju na gorąco. Idealna do pałowania przeciwników. Zadaje 20 obrażeń przeciwnikowi.");
         System.out.println("Tulipan - Rozbita o krawężnik pusta butelka po Amarence. Broń krucha, ale jakże skuteczna. Zadaje 25 obrażeń przeciwnikowi.");
         System.out.println("Bombelek - Amunicja wielokrotnego użytku - rzucasz, a po trafieniu w przeciwnika bachorek wraca. Zadaje 20 obrażeń przeciwnikowi.");
@@ -32,7 +32,7 @@ public class Fight {
     }
     private static void printBuffs(){
         System.out.println();
-        System.out.println("Lista przedmiotów:");
+        System.out.println("Lista przedmiotów:\n");
         System.out.println("Batonik - Tani i w miarę pożywny. Podnosi poziom cukru. + 20 hp");
         System.out.println("Pizza - Kawałek starej pizzy znaleziony przy śmietniku. Szkoda, że hawajska... + 40 hp -20 mp");
         System.out.println("Mortadela - Ulubiona szynka, która nie widziała mięsa w składzie. + 30 hp - 5 mp");
@@ -49,9 +49,9 @@ public class Fight {
             enemy.getHealthPoints(), enemy.getManaPoints());}
 
         private static void printQuit(){
-        System.out.println("Postanowiłeś opuścić to blokowisko, rozpocząć nowe życie i wreszczie wyjść z marginesu społecznego. Trochę szkoda, bo szykowała się niezła jatka...");
+        System.out.println("\nPostanowiłeś opuścić to blokowisko, rozpocząć nowe życie i wreszczie wyjść z marginesu społecznego. Trochę szkoda, bo szykowała się niezła jatka...");
 
-        System.out.print("\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");}
+        System.out.println("\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");}
 
     public static void fight(Hobo player) throws InvalidCommandException, UnknownItemException {
         Hobo enemy = Generator.generateRandomEnemy();
