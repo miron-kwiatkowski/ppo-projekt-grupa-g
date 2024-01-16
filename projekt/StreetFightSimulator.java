@@ -29,7 +29,18 @@ public class StreetFightSimulator {
                     int battles = 0;
                     while (!player.isDead()) {
                         if (battles == 3) {
-                            break;
+                            ChurchDoorkeeper churchDoorkeeper = new ChurchDoorkeeper();
+                            Satanist satanist = new Satanist();
+                            System.out.println("Mijasz kościół, zastanawiasz się czy woda święcona ma w sobie procenty. Gdy już zamierzasz podpić wodę z kościelnej misy, napotykasz kogoś kto nie chce dzielić się \"procentami\".");
+                            Fight.bossFight(player,churchDoorkeeper);
+                            if (!player.isDead()) {
+                                player.applyHealing(30);
+                                player.applyManaRestoration(30);
+                                System.out.println("Przeżyłeś! Oto twoja nagroda: +30 HP, +30 MP");
+                                System.out.println("Ale cóż to! Odźwierny zaczął przechodzić transformację! Czy to sam Szatan w niego wstąpił!");
+                                Fight.bossFight(player,satanist);
+                                break;
+                            }
                         } else {
                             Fight.fight(player);
                         }
