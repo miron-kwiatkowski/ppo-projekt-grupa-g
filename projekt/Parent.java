@@ -9,7 +9,7 @@ public class Parent extends Hobo {
     }
 
   public void specialAttack(Hobo target) {
-        System.out.println(getName() + " Nie dostaje zniżki na bąbelki Rzuca pełną, śmierdzącą pieluchą!");
+        System.out.println(getName() + " nie dostaje zniżki na bąbelki. Rzuca pełną, śmierdzącą pieluchą!");
         target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
         takeManaPoints(10); // Odejmuje 10 punktów many po użyciu specjalnego ataku
   }
