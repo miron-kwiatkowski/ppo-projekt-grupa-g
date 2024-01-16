@@ -1,7 +1,6 @@
 import Exceptions.InvalidCommandException;
 import Exceptions.UnknownItemException;
 
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -19,6 +18,7 @@ public class Fight {
         System.out.println("b - Użyj przedmiotu");
         System.out.println("c - Specjalny Atak");
         System.out.println("d - Użyj buffa");
+        System.out.println("q - Zakończ grę");
     }
     private static void printItems(){
         System.out.println();
@@ -48,6 +48,11 @@ public class Fight {
             player.getHealthPoints(), player.getManaPoints(),
             enemy.getHealthPoints(), enemy.getManaPoints());}
 
+        private static void printQuit(Hobo player,Hobo enemy){
+        System.out.println();
+
+        System.out.print("\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");}
+
     public static void fight(Hobo player) throws InvalidCommandException, UnknownItemException {
         Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
@@ -62,6 +67,13 @@ public class Fight {
             printMenu();
 
             String command = input.next();
+
+            if (command.equals("q")) {
+                System.out.println("Koniec gry. Dziękujemy za udział w symulacji!");
+                System.exit(0);
+            }
+
+
             String parameter = "";
 
             if (command.equals("b")) {
@@ -105,6 +117,13 @@ public class Fight {
             printMenu();
 
             String command = input.next();
+
+            if (command.equals("q")) {
+                System.out.println("Koniec gry. Dziękujemy za udział w symulacji!");
+                System.exit(0); // Zakończ cały program
+            }
+
+
             String parameter = "";
 
             if (command.equals("b")) {
@@ -162,6 +181,10 @@ public class Fight {
                     case "d":
                         Items.itemsBuffs(parameter.toLowerCase(), player);
                         validCommand = true;
+                        break;
+                    case "q":
+                        System.out.println("Gra zakończona. Do zobaczenia!");
+                        System.exit(0); // Kończy działanie programu
                         break;
                     default:
                         throw new InvalidCommandException();
