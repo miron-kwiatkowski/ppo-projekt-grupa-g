@@ -1,6 +1,6 @@
 import java.util.Random;
 class Hobo {
-   private String name;
+    private String name;
     private String gender;
     private String className;
     private String title;
@@ -20,14 +20,25 @@ class Hobo {
         this.attackPoints = generateRandomAttackPoints();
     }
 
+    public Hobo() {
+        this.gender = "m";
+        this.name = "Marcin";
+        this.title = "z bloku";
+        this.className="Żul";
+        this.healthPoints = 100;
+        this.manaPoints = 100;
+        this.item = "Tulipan";
+        this.attackPoints = generateRandomAttackPoints();
+    }
+
     private int generateRandomAttackPoints() {
         Random random = new Random();
-        return random.nextInt(20) + 10;
+        return random.nextInt(10) + 10;
     }
 
     public void specialAttack(Hobo target) {
         System.out.println(getName() + " zbiera pokłady mistycznej energi i używa tajemnego ataku Wódzitsu!");
-        target.takeHit(getAttackPoints() + 15); // Atak specjalny zwiększa obrażenia o 10
+        target.takeHit(getAttackPoints() + 10); // Atak specjalny zwiększa obrażenia o 10
         takeManaPoints(10);// Odejmuje 10 punktów many po użyciu specjalnego ataku
     }
     public void applyHealing(int healingPoints) {
