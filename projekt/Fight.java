@@ -143,26 +143,23 @@ public class Fight {
         while (!validCommand) {
             try {
                 switch (command.toLowerCase()) {
-                    case "a": // atak
+                    case "a":
                         enemy.takeHit(player.getAttackPoints());
                         validCommand = true;
                         break;
-                    case "b": // użycie przedmiotu na wrogu
+                    case "b":
                         items.itemsUse(parameter.toLowerCase(), enemy);
                         validCommand = true;
                         break;
-                    case "c": // specjalny atak
+                    case "c":
                         if (player.getManaPoints() >= 10) {
                             player.specialAttack(enemy);
                             validCommand = true;
                         } else {
                             System.out.println("Nie masz wystarczająco many do użycia specjalnego ataku!");
-                            printMenu();
-
-                            command = input.next().toLowerCase();
                         }
                         break;
-                    case "d": // użycie buffa
+                    case "d":
                         Items.itemsBuffs(parameter.toLowerCase(), player);
                         validCommand = true;
                         break;
@@ -172,30 +169,29 @@ public class Fight {
             } catch (InvalidCommandException e) {
                 System.out.println("Błąd: " + e.getMessage());
                 System.out.println("Twoja tura zostanie powtórzona.");
-
-                printMenu();
-
-                command = input.next().toLowerCase();
-                if (command.equals("b")) {
-                    printItems();
-                    System.out.println("Podaj nazwę przedmiotu:");
-                    parameter = input.next().toLowerCase();
-                } else {
-                    parameter = null;
-                }
-                command = input.next().toLowerCase();
-                if (command.equals("d")) {
-                    printBuffs();
-                    System.out.println("Podaj nazwę przedmiotu:");
-                    parameter = input.next().toLowerCase();
-                } else {
-                    parameter = null;
-                }
             } catch (UnknownItemException e) {
                 System.out.println("Błąd: Nieznany przedmiot - " + e.getItemName());
                 System.out.println("Twoja tura zostanie powtórzona.");
+            }
+
+            if (!validCommand) {
                 printMenu();
                 command = input.next().toLowerCase();
+                input.nextLine();
+
+                if (command.equals("b") || command.equals("d")) {
+                    if (command.equals("b")) {
+                        printItems();
+                        System.out.println("Podaj nazwę przedmiotu:");
+                    } else {
+                        printBuffs();
+                        System.out.println("Podaj nazwę buffa:");
+                    }
+                    parameter = input.next().toLowerCase();
+                    input.nextLine();
+                } else {
+                    parameter = null;
+                }
             }
         }
     }
