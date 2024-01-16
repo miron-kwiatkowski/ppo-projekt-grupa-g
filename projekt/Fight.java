@@ -49,7 +49,7 @@ public class Fight {
             enemy.getHealthPoints(), enemy.getManaPoints());}
 
         private static void printQuit(){
-        System.out.println();
+        System.out.println("Postanowiłeś opuścić to blokowisko, rozpocząć nowe życie i wreszczie wyjść z marginesu społecznego. Trochę szkoda, bo szykowała się niezła jatka...");
 
         System.out.print("\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");}
 
