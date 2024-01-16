@@ -1,8 +1,7 @@
 public class StreetDweller extends Hobo {
 
     public StreetDweller(String name, String gender, String title) {
-        super(name, gender);
-        setTitle("spod Kerfura");
+        super(name, gender, title);
         setClassName("Menel");
         setAttackPoints(10);
         setItem("Klejpała");
