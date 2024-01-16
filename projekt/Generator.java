@@ -6,7 +6,7 @@ import java.util.Random;
 public class Generator{
     private static final List<String> maleFirstNames = Arrays.asList("Mietek", "Ryszard", "Zdzichu", "Mścichuj", "Moczywór", "Andrzej", "Józek", "Stachu", "Bolek", "Marian", "Brajan", "Tadek", "Ferdek", "Bożydar");
     private static final List<String> femaleFirstNames = Arrays.asList("Karyna", "Nikola", "Andżelika", "Dżeskia", "Elka", "Helena", "Halina", "Bożenka", "Jebodyda", "Mścisława", "Kaśka", "Klaudia", "Żanetka", "Renata", "Mariola");
-    private static final List<String> titles = Arrays.asList("spod Lidla");
+    private static final List<String> titles = Arrays.asList("spod Lidla", "spod Żabki", "spod Biedronki", "spod Monopolowego", "na zasiłku", "spod mostu", "z piwnicy", "z mlekiem", "spod kościoła", "z rowu", "z osiedla", "żebrzący o dwa złote" );
     
 
     private static final Random random = new Random();
