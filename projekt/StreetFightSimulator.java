@@ -15,15 +15,16 @@ public class StreetFightSimulator {
                     String gender = input.next();
 
                     if (!"m".equals(gender) && !"k".equals(gender)) {
+                        input.close();
                         throw new GenderException();
                     }
 
                     String title = Generator.generateRandomTitle();
                     Hobo player = new Hobo(name, gender, title);
-                    System.out.println("Witaj, " + name + "! Cieszę się, że dołączyłeś do symulatora walk ulicznych.");
+                    System.out.println("\n\nWitaj, " + name + "! Cieszę się, że dołączasztest do symulatora walk ulicznych.\nOd dzisiaj zwiesz się:");
                     System.out.println(player.toString());
 
-                    System.out.println("Pora na spokojną przechadzkę po naszym pięknym wygwizdowie. " +
+                    System.out.println("\nPora na spokojną przechadzkę po naszym pięknym wygwizdowie. " +
                             "\nAle coż to, twój pierwszy przeciwnik wyłania się zza winkla!");
                     // ROZPOCZNIJ WALKĘ
                     int battles = 0;
@@ -31,14 +32,15 @@ public class StreetFightSimulator {
                         if (battles == 3) {
                             ChurchDoorkeeper churchDoorkeeper = new ChurchDoorkeeper();
                             Satanist satanist = new Satanist();
-                            System.out.println("Mijasz kościół, zastanawiasz się czy woda święcona ma w sobie procenty. Gdy już zamierzasz podpić wodę z kościelnej misy, napotykasz kogoś kto nie chce dzielić się \"procentami\".");
+                            System.out.println("\nMijasz kościół, zastanawiasz się czy woda święcona ma w sobie procenty. Gdy już zamierzasz podpić wodę z kościelnej misy, napotykasz kogoś kto nie chce dzielić się \"procentami\".");
                             Fight.bossFight(player,churchDoorkeeper);
                             if (!player.isDead()) {
                                 player.applyHealing(30);
                                 player.applyManaRestoration(30);
-                                System.out.println("Przeżyłeś! Oto twoja nagroda: +30 HP, +30 MP");
+                                System.out.println("Udało ci się przeżyć! Oto twoja nagroda: +30 HP, +30 MP");
                                 System.out.println("Ale cóż to! Odźwierny zaczął przechodzić transformację! Czy to sam Szatan w niego wstąpił!");
                                 Fight.bossFight(player,satanist);
+                                System.out.println("\n\nGratulacje "+player.getName()+", udało ci się przetrwać spokojny niedzielny spacer po naszym blokowisku.");
                                 break;
                             }
                         } else {
@@ -47,17 +49,24 @@ public class StreetFightSimulator {
                         if (!player.isDead()) {
                             player.applyHealing(30);
                             player.applyManaRestoration(30);
-                            System.out.println("Przeżyłeś! Oto twoja nagroda: +30 HP, +30 MP");
+                            System.out.println("Udało ci się przeżyć! Oto twoja nagroda: +30 HP, +30 MP");
                             battles++;
                         }
+                        else if(player.isDead()){
+                            System.out.println("\n\nNo, było blisko, ale ostatecznie nie udało ci się pokonać każdego przeciwnika na tym jakże spokojnym blokowisku.");
+                        }
                     }
-                    System.out.println("Gratulacje "+player.getName()+", udało ci się przetrwać spokojny niedzielny spacer po naszym blokowisku.\n" +
-                            "Dziękujemy, że zechciałeś spróbować swoich sił :>\nTwórcy gry:\nProgramiści:\nEwa Kubera\nMiron Kwiatkowski\nDyrektorzy kreatywni:\nAmelia Wałek\nPatrycja Marucińska\n" +
-                            "Mamy nadzieję, że rozgrywka była przyjemna i sprawiła ci wiele zabawy.");
-
+                    System.out.print("Dziękujemy, że ");
+                            if(player.getGender().equals("m")){
+                                System.out.print("zechciałeś ");
+                            }
+                            else if(player.getGender().equals("k")){
+                                System.out.print("zechciałaś ");
+                            }
+                            System.out.print("spróbować swoich sił w zaciekłej walce :>\n\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");
                 } catch (GenderException | InvalidCommandException | UnknownItemException e) {
                     System.out.println("Błąd: " + e.getMessage());
                 }
-
+                input.close();
             }
 }
