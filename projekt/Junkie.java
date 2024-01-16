@@ -4,7 +4,7 @@ public class Junkie extends Hobo {
         super(name, gender, title);
         setClassName("Ćpun");
         setAttackPoints(10);
-        setItem("Strzykawka");
+        setItem("strzykawka");
     }
 
   public void specialAttack(Hobo target) {
