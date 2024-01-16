@@ -1,8 +1,7 @@
 public class Junkie extends Hobo {
 
     public Junkie(String name, String gender, String title) {
-        super(name, gender);
-        setTitle("z meliny");
+        super(name, gender, title);
         setClassName("Ćpun");
         setAttackPoints(10);
         setItem("Strzykawka");
