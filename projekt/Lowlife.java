@@ -4,7 +4,7 @@ public class Lowlife extends Hobo {
         super(name, gender, title);
         setClassName("Patus");
         setAttackPoints(10);
-        setItem("Kij");
+        setItem("kij");
     }
 
   public void specialAttack(Hobo target) {
