@@ -11,7 +11,7 @@ public class Satanist extends Hobo {
     }
 
     public void specialAttack(Hobo target) {
-        System.out.println(getName() + " odprawia rytułał przywołania demona.");
+        System.out.println(getName() + " odprawia rytuał przywołania demona.");
         target.takeHit(getAttackPoints() + 15); // Atak specjalny zwiększa obrażenia o 10
         takeManaPoints(10);  // Odejmuje 10 punktów many po użyciu specjalnego ataku
     }
