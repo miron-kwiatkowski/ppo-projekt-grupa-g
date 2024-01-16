@@ -21,15 +21,15 @@ public class Fight {
     }
     private static void printItems(){System.out.println("Tu jest lista broni do użytku:");
         System.out.println("Klejpała - Wyjęta ze śmietnika, potężna laska kleju na gorąco. Idealna do pałowania przeciwników. + 5 do ataku");
-        System.out.println("Tulipan - Rozbita o krawężnik pusta butelka po tanim winku. Broń krucha, ale jakże skuteczna. + 10 do ataku");
+        System.out.println("Tulipan - Rozbita o krawężnik pusta butelka po Amarence. Broń krucha, ale jakże skuteczna. + 10 do ataku");
         System.out.println("Bombelek - Amunicja wielokrotnego użytku - rzucasz, a po trafieniu w przeciwnika bachorek wraca. + 15 do ataku");
-        System.out.println("Kij - Nie stać cię na prawdziwy kij bejsbolowy? Nic starconego! Kij od mitły zadziała równie skutecznie. + 10 do ataku");
+        System.out.println("Kij - Nie stać cię na prawdziwy kij beseballowy? Nic straconego! Kij od miotły zadziała równie skutecznie. + 10 do ataku");
         System.out.println("Strzykawka - Lepiej na nią uważać. Nie wiadomo ile osób korzystało z niej wcześniej. Roznosi HIV. + 15 do ataku");
 
     }
     private static void printBuffs(){
         System.out.println("Lista przedmiotów:");
-        System.out.println("Batonik - Tani i w miarę pożywny. Ponosi poziom cukru. + 5 hp");
+        System.out.println("Batonik - Tani i w miarę pożywny. Podnosi poziom cukru. + 5 hp");
         System.out.println("Pizza - Kawałek starej pizzy znaleziony przy śmietniku. Szkoda, że hawajska... + 20 hp");
         System.out.println("Mortadela - Ulubiona szynka, która nie widziała mięsa w składzie. + 15 hp");
         System.out.println("Bułka - Kajzerka z ulubionego dyskontu. 33 grosze, a tyle smaku. Idealna do mortadeli. + 10 hp");
