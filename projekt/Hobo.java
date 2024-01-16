@@ -22,7 +22,7 @@ class Hobo {
 
     private int generateRandomAttackPoints() {
         Random random = new Random();
-        return random.nextInt(40) + 10;
+        return random.nextInt(20) + 10;
     }
 
     public void specialAttack(Hobo target) {
