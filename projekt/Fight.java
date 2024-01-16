@@ -48,7 +48,7 @@ public class Fight {
             player.getHealthPoints(), player.getManaPoints(),
             enemy.getHealthPoints(), enemy.getManaPoints());}
 
-        private static void printQuit(Hobo player,Hobo enemy){
+        private static void printQuit(){
         System.out.println();
 
         System.out.print("\nTwórcy gry:\nEwa Kubera\nMiron Kwiatkowski\nAmelia Wałek\nPatrycja Marucińska\n\nMamy nadzieję, że rozgrywka wywołała chociaż lekki uśmiech ;D\n");}
@@ -69,7 +69,7 @@ public class Fight {
             String command = input.next();
 
             if (command.equals("q")) {
-                System.out.println("Koniec gry. Dziękujemy za udział w symulacji!");
+                printQuit();
                 System.exit(0);
             }
 
@@ -119,7 +119,7 @@ public class Fight {
             String command = input.next();
 
             if (command.equals("q")) {
-                System.out.println("Koniec gry. Dziękujemy za udział w symulacji!");
+                printQuit();
                 System.exit(0); // Zakończ cały program
             }
 
@@ -183,7 +183,7 @@ public class Fight {
                         validCommand = true;
                         break;
                     case "q":
-                        System.out.println("Gra zakończona. Do zobaczenia!");
+                        printQuit();
                         System.exit(0); // Kończy działanie programu
                         break;
                     default:
