@@ -9,17 +9,6 @@ class Hobo {
     private int manaPoints;
     private int attackPoints;
 
-    public Hobo(String name, String gender) {
-        this.gender = gender;
-        this.name = name;
-        this.title = "z Podlasia";
-        this.className="Żul";
-        this.healthPoints = 100;
-        this.manaPoints = 100;
-        this.item = "Tulipan";
-        this.attackPoints = generateRandomAttackPoints();
-    }
-
     public Hobo(String name, String gender, String title) {
         this.gender = gender;
         this.name = name;
