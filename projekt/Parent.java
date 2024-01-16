@@ -1,8 +1,7 @@
 public class Parent extends Hobo {
 
     public Parent(String name, String gender, String title) {
-        super(name, gender);
-        setTitle("z Mopsu");
+        super(name, gender, title);
         setClassName("Dysfunkcyjny rodzic");
         setAttackPoints(10);
         setItem("Bombelek");
