@@ -1,8 +1,7 @@
 public class Lowlife extends Hobo {
 
     public Lowlife(String name, String gender, String title) {
-        super(name, gender);
-        setTitle("z bloku");
+        super(name, gender, title);
         setClassName("Patus");
         setAttackPoints(10);
         setItem("Kij");
