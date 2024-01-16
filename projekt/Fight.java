@@ -87,7 +87,49 @@ public class Fight {
             System.out.println("Gratulacje! Wygrałeś walkę! Przeciwnik pokonany.");
         }
     }
+    public static void bossFight(Hobo player,Hobo enemy) throws InvalidCommandException, UnknownItemException {
+        Scanner input = new Scanner(System.in);
+        Items items = new Items();
+        System.out.println("Strzeż się go!:");
+        System.out.println(enemy);
+        System.out.println("Rozpoczynamy walkę!");
 
+        while (!player.isDead() && !enemy.isDead()) {
+
+            printMenu();
+
+            String command = input.next();
+            String parameter = "";
+
+            if (command.equals("b")) {
+                printItems();
+                System.out.println("Podaj nazwę przedmiotu:");
+                parameter = input.next();
+            }
+            else if(command.equals("d")){
+                printBuffs();
+                System.out.println("Podaj nazwę przedmiotu:");
+                parameter = input.next();
+            }
+
+            playerTurn(player, enemy, items, command, parameter);
+
+            printStats(player,enemy);
+
+            if (!enemy.isDead()) {
+                enemyTurn(player, enemy);
+                printStats(player,enemy);
+            }
+        }
+
+        printStats(player,enemy);
+
+        if (player.isDead()) {
+            System.out.println("Poniosłeś sromotną klęskę, teraz spłoniesz w piekle.");
+        } else {
+            System.out.println("Udało ci się, zwycięstwo!");
+        }
+    }
     private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) {
         Scanner input = new Scanner(System.in);
         boolean validCommand = false;
@@ -205,4 +247,3 @@ public class Fight {
     }
 
 }
-
