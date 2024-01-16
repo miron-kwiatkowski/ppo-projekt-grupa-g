@@ -185,7 +185,7 @@ public class Fight {
                         System.out.println("Podaj nazwę przedmiotu:");
                     } else {
                         printBuffs();
-                        System.out.println("Podaj nazwę buffa:");
+                        System.out.println("Podaj nazwę przedmiotu:");
                     }
                     parameter = input.next().toLowerCase();
                     input.nextLine();
