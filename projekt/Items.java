@@ -37,6 +37,14 @@ public class Items {
             System.out.println("Gracz używa zużytej strzykawki! Zadajesz większe obrażenia, ale dostajesz również HIV!");
             player.takeHit(15);
         });
+        itemActions.put("krzyż", player -> {
+            System.out.println("Gracz wymachuje krzyżem i zaczyna odprawiać egzorcyzmy.");
+            player.takeHit(20);
+        });
+        itemActions.put("odwrócony krzyż", player -> {
+            System.out.println("Gracz wymachuje odwróconym krzyżem i zaczyna mówić po aramejsku.");
+            player.takeHit(30);
+        });
 
         // Dodaj więcej akcji dla innych przedmiotów, jeśli potrzebujesz
     }
