@@ -21,7 +21,7 @@ public class StreetFightSimulator {
 
                     String title = Generator.generateRandomTitle();
                     Hobo player = new Hobo(name, gender, title);
-                    System.out.println("\n\nWitaj, " + name + "! Cieszę się, że dołączasztest do symulatora walk ulicznych.\nOd dzisiaj zwiesz się:");
+                    System.out.println("\n\nWitaj, " + name + "! Cieszę się, że dołączasz do symulatora walk ulicznych.\nOd dzisiaj zwiesz się:");
                     System.out.println(player.toString());
 
                     System.out.println("\nPora na spokojną przechadzkę po naszym pięknym wygwizdowie. " +
