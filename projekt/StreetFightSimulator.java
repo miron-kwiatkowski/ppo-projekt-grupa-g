@@ -7,9 +7,9 @@ public class StreetFightSimulator {
                 System.out.println("Witaj w symulatorze walk ulicznych! " +
                         "\nCzeka cię wielkie wyzwanie stoczenia boju z najwybitniejszymi jednostkami naszego miasta. \n" +
                         "Pora abyś powiedział nam kim jesteś.");
-                try{
-                System.out.println("Podaj swoje imię przybyszu:");
-                String name = input.next();
+                try {
+                    System.out.println("Podaj swoje imię przybyszu:");
+                    String name = input.next();
 
                     System.out.println("Podaj swoją płeć (m/k):");
                     String gender = input.next();
@@ -28,23 +28,25 @@ public class StreetFightSimulator {
                     // ROZPOCZNIJ WALKĘ
                     int battles = 0;
                     while (!player.isDead()) {
-                        //if(battles%3==0){
-                        //bossfight
-                        //}
-                        //else {
-                        Fight.fight(player);
-                        //}
-                        if (!player.isDead()) {
-                            System.out.println("Gratulacje użytkowniku, wygrałeś nowy Iphone 6S");
+                        if (battles == 3) {
+                            break;
+                        } else {
+                            Fight.fight(player);
                         }
-                        battles++;
+                        if (!player.isDead()) {
+                            player.applyHealing(30);
+                            player.applyManaRestoration(30);
+                            System.out.println("Przeżyłeś! Oto twoja nagroda: +30 HP, +30 MP");
+                            battles++;
+                        }
                     }
-                } catch (GenderException e) {
-                   System.out.println("Błąd: " + e.getMessage());
-                } catch (InvalidCommandException e) {
-                    System.out.println("Błąd: " + e.getMessage());
-                } catch (UnknownItemException e) {
+                    System.out.println("Gratulacje "+player.getName()+", udało ci się przetrwać spokojny niedzielny spacer po naszym blokowisku.\n" +
+                            "Dziękujemy, że zechciałeś spróbować swoich sił :>\nTwórcy gry:\nProgramiści:\nEwa Kubera\nMiron Kwiatkowski\nDyrektorzy kreatywni:\nAmelia Wałek\nPatrycja Marucińska\n" +
+                            "Mamy nadzieję, że rozgrywka była przyjemna i sprawiła ci wiele zabawy.");
+
+                } catch (GenderException | InvalidCommandException | UnknownItemException e) {
                     System.out.println("Błąd: " + e.getMessage());
                 }
+
             }
 }
