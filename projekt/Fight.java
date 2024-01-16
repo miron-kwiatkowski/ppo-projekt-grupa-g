@@ -1,6 +1,7 @@
 import Exceptions.InvalidCommandException;
 import Exceptions.UnknownItemException;
 
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -18,15 +19,14 @@ public class Fight {
         System.out.println("c - Specjalny Atak");
         System.out.println("d - Użyj buffa");
     }
-    
     private static void printItems(){System.out.println("Tu jest lista broni do użytku:");
         System.out.println("Klejpała - Wyjęta ze śmietnika, potężna laska kleju na gorąco. Idealna do pałowania przeciwników. + 5 do ataku");
         System.out.println("Tulipan - Rozbita o krawężnik pusta butelka po tanim winku. Broń krucha, ale jakże skuteczna. + 10 do ataku");
         System.out.println("Bombelek - Amunicja wielokrotnego użytku - rzucasz, a po trafieniu w przeciwnika bachorek wraca. + 15 do ataku");
         System.out.println("Kij - Nie stać cię na prawdziwy kij bejsbolowy? Nic starconego! Kij od mitły zadziała równie skutecznie. + 10 do ataku");
         System.out.println("Strzykawka - Lepiej na nią uważać. Nie wiadomo ile osób korzystało z niej wcześniej. Roznosi HIV. + 15 do ataku");
+
     }
-    
     private static void printBuffs(){
         System.out.println("Lista przedmiotów:");
         System.out.println("Batonik - Tani i w miarę pożywny. Ponosi poziom cukru. + 5 hp");
@@ -38,7 +38,6 @@ public class Fight {
         System.out.println("Piwko - Jedyne słuszne - Mocny VIP za całe 1,99! Można się nayebać za dobre pieniądze. + 10 mp");
         System.out.println("Wódeczka - Królowa wśród tanich alkoholi. Nie ważne czy to małpeczka czy półlitrówka, jej cudowna moc zawsze zostanie doceniona. + 20 mp");
     }
-    
     private static void printStats(Hobo player,Hobo enemy){
         System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
             player.getHealthPoints(), player.getManaPoints(),
@@ -89,19 +88,19 @@ public class Fight {
         }
     }
 
-    private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) throws InvalidCommandException {
+    private static void playerTurn(Hobo player, Hobo enemy, Items items, String command, String parameter) {
         Scanner input = new Scanner(System.in);
         boolean validCommand = false;
 
         while (!validCommand) {
             try {
-                switch (command) {
+                switch (command.toLowerCase()) {
                     case "a": // atak
                         enemy.takeHit(player.getAttackPoints());
                         validCommand = true;
                         break;
                     case "b": // użycie przedmiotu na wrogu
-                        items.itemsUse(parameter, enemy);
+                        items.itemsUse(parameter.toLowerCase(), enemy);
                         validCommand = true;
                         break;
                     case "c": // specjalny atak
@@ -112,11 +111,11 @@ public class Fight {
                             System.out.println("Nie masz wystarczająco many do użycia specjalnego ataku!");
                             printMenu();
 
-                            command = input.next();
+                            command = input.next().toLowerCase();
                         }
                         break;
                     case "d": // użycie buffa
-                        Items.itemsBuffs(parameter, player);
+                        Items.itemsBuffs(parameter.toLowerCase(), player);
                         validCommand = true;
                         break;
                     default:
@@ -128,19 +127,19 @@ public class Fight {
 
                 printMenu();
 
-                command = input.next();
+                command = input.next().toLowerCase();
                 if (command.equals("b")) {
                     printItems();
                     System.out.println("Podaj nazwę przedmiotu:");
-                    parameter = input.next();
+                    parameter = input.next().toLowerCase();
                 } else {
                     parameter = null;
                 }
-                command = input.next();
+                command = input.next().toLowerCase();
                 if (command.equals("d")) {
                     printBuffs();
                     System.out.println("Podaj nazwę przedmiotu:");
-                    parameter = input.next();
+                    parameter = input.next().toLowerCase();
                 } else {
                     parameter = null;
                 }
@@ -148,7 +147,7 @@ public class Fight {
                 System.out.println("Błąd: Nieznany przedmiot - " + e.getItemName());
                 System.out.println("Twoja tura zostanie powtórzona.");
                 printMenu();
-                command = input.next();
+                command = input.next().toLowerCase();
             }
         }
     }
@@ -204,4 +203,6 @@ public class Fight {
                 break;
         }
     }
+
 }
+
