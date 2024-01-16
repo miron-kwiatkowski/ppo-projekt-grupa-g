@@ -13,21 +13,25 @@ public class Fight {
     private static final int BUFF_USE_PROBABILITY = 10;      // Prawdopodobieństwo użycia buffa
 
     private static void printMenu(){
+        System.out.println();
         System.out.println("Co chcesz zrobić? (Wprowadź odpowiednią komendę):");
         System.out.println("a - Atak");
         System.out.println("b - Użyj przedmiotu");
         System.out.println("c - Specjalny Atak");
         System.out.println("d - Użyj buffa");
     }
-    private static void printItems(){System.out.println("Tu jest lista broni do użytku:");
+    private static void printItems(){
+        System.out.println();
+        System.out.println("Tu jest lista broni do użytku:");
         System.out.println("Klejpała - Wyjęta ze śmietnika, potężna laska kleju na gorąco. Idealna do pałowania przeciwników. + 5 do ataku");
         System.out.println("Tulipan - Rozbita o krawężnik pusta butelka po Amarence. Broń krucha, ale jakże skuteczna. + 10 do ataku");
         System.out.println("Bombelek - Amunicja wielokrotnego użytku - rzucasz, a po trafieniu w przeciwnika bachorek wraca. + 15 do ataku");
-        System.out.println("Kij - Nie stać cię na prawdziwy kij beseballowy? Nic straconego! Kij od miotły zadziała równie skutecznie. + 10 do ataku");
+        System.out.println("Kij - Nie stać cię na prawdziwy kij baseballowy? Nic straconego! Kij od miotły zadziała równie skutecznie. + 10 do ataku");
         System.out.println("Strzykawka - Lepiej na nią uważać. Nie wiadomo ile osób korzystało z niej wcześniej. Roznosi HIV. + 15 do ataku");
 
     }
     private static void printBuffs(){
+        System.out.println();
         System.out.println("Lista przedmiotów:");
         System.out.println("Batonik - Tani i w miarę pożywny. Podnosi poziom cukru. + 5 hp");
         System.out.println("Pizza - Kawałek starej pizzy znaleziony przy śmietniku. Szkoda, że hawajska... + 20 hp");
@@ -39,6 +43,7 @@ public class Fight {
         System.out.println("Wódeczka - Królowa wśród tanich alkoholi. Nie ważne czy to małpeczka czy półlitrówka, jej cudowna moc zawsze zostanie doceniona. + 20 mp");
     }
     private static void printStats(Hobo player,Hobo enemy){
+        System.out.println();
         System.out.printf("Ty: %d HP %d MP\nPrzeciwnik: %d HP %d MP\n",
             player.getHealthPoints(), player.getManaPoints(),
             enemy.getHealthPoints(), enemy.getManaPoints());}
@@ -47,6 +52,7 @@ public class Fight {
         Hobo enemy = Generator.generateRandomEnemy();
         Scanner input = new Scanner(System.in);
         Items items = new Items();
+        System.out.println();
         System.out.println("Pojawił się twój przeciwnik:");
         System.out.println(enemy);
         System.out.println("Rozpoczynamy walkę!");
