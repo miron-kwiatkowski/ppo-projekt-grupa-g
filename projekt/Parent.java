@@ -4,7 +4,7 @@ public class Parent extends Hobo {
         super(name, gender, title);
         setClassName("Dysfunkcyjny rodzic");
         setAttackPoints(10);
-        setItem("Bombelek");
+        setItem("bombelek");
     }
 
   public void specialAttack(Hobo target) {
