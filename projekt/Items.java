@@ -15,38 +15,38 @@ public class Items {
 
     private void initializeItemActions() {
         itemActions = new HashMap<>();
-        itemActions.put("klejpała", player -> {
+        itemActions.put("klejpała", (player,enemy) -> {
             System.out.println("Gracz rzuca klejpałą wygrzebaną ze śmietnika!");
-            player.takeHit(20);
-            player.attack(player);
+            player.takeHit(10);
+            enemy.takeHit(20)
         });
-        itemActions.put("tulipan", player -> {
+        itemActions.put("tulipan", (player,enemy) -> {
             System.out.println("Gracz uderza tulipanem z butelki po tanim winie!");
-            player.takeHit(25);
-            player.attack(player);
+            player.takeHit(12);
+            enemy.takeHit(25);
         });
-        itemActions.put("bombelek", player -> {
+        itemActions.put("bombelek", (player,enemy) -> {
             System.out.println("Gracz rzuca bombelka! Ma ich sporą amunicję dzięki 500+");
-            player.takeHit(20);
-            player.attack(player);
+            player.takeHit(10);
+            enemy.takeHit(20);
         });
-        itemActions.put("kij", player -> {
+        itemActions.put("kij", (player,enemy) -> {
             System.out.println("Gracz uderza kijem od miotły!");
-            player.takeHit(25);
-            player.attack(player);
+            player.takeHit(12);
+            enemy.takeHit(25);
         });
-        itemActions.put("strzykawka", player -> {
+        itemActions.put("strzykawka", (player,enemy) -> {
             System.out.println("Gracz używa zużytej strzykawki! Zadajesz większe obrażenia, ale dostajesz również HIV!");
-            player.takeHit(30);
-            player.attack(player);
+            player.takeHit(15);
+            enemy.takeHit(30);
         });
-        itemActions.put("krzyż", player -> {
+        itemActions.put("krzyż", (player,enemy) -> {
             System.out.println("Gracz wymachuje krzyżem i zaczyna odprawiać egzorcyzmy.");
-            player.takeHit(20);
+            enemy.takeHit(20);
         });
-        itemActions.put("odwrócony krzyż", player -> {
+        itemActions.put("odwrócony krzyż", (player,enemy) -> {
             System.out.println("Gracz wymachuje odwróconym krzyżem i zaczyna mówić po aramejsku.");
-            player.takeHit(30);
+            enemy.takeHit(30);
         });
 
         // Dodaj więcej akcji dla innych przedmiotów, jeśli potrzebujesz
