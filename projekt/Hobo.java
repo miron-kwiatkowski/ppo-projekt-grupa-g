@@ -111,6 +111,4 @@ class Hobo {
         return healthPoints <= 0;
     }
 
-    public void attack(Hobo player) {
-    }
 }
