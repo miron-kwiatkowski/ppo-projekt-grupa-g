@@ -33,7 +33,7 @@ class Hobo {
 
     private int generateRandomAttackPoints() {
         Random random = new Random();
-        return random.nextInt(10) + 10;
+        return random.nextInt(11) + 10;
     }
 
     public void specialAttack(Hobo target) {
